@@ -89,28 +89,7 @@ CREATE TABLE IF NOT EXISTS seas(
 
 
 
-CREATE TABLE IF NOT EXISTS user(
-    id INT NOT NULL AUTO_INCREMENT,
-    id_loct INT NOT NULL,
-    id_sex INT NOT NULL,
-    
-    first_name VARCHAR(64) NOT NULL,
-    last_name VARCHAR(64) NOT NULL,
-    username VARCHAR(64) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    phone VARCHAR(14) NOT NULL,
-    cod_fisc VARCHAR(24) NOT NULL,
-    
-    PRIMARY KEY(id),
-    FOREIGN KEY(id_loct) REFERENCES loct(id),
-    FOREIGN KEY(id_sex) REFERENCES sex(id),
-    
-    CONSTRAINT uq_user_username UNIQUE (username),
-    CONSTRAINT uq_user_email UNIQUE (email),
-    CONSTRAINT uq_user_phone UNIQUE (phone),
-    CONSTRAINT uq_user_cod_fisc UNIQUE (cod_fisc)
-);
+
 
 CREATE TABLE IF NOT EXISTS apat(
     id INT NOT NULL AUTO_INCREMENT,
@@ -177,5 +156,86 @@ CREATE TABLE IF NOT EXISTS trip(
     FOREIGN KEY (id_seas) REFERENCES seas(id)
 );
 
+CREATE TABLE IF NOT EXISTS user(
+    id INT NOT NULL AUTO_INCREMENT,
+    id_loct INT NOT NULL,
+    id_sex INT NOT NULL,
+    
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    username VARCHAR(64) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(14) NOT NULL,
+    cod_fisc VARCHAR(24) NOT NULL,
+    
+    PRIMARY KEY(id),
+    FOREIGN KEY(id_loct) REFERENCES loct(id),
+    FOREIGN KEY(id_sex) REFERENCES sex(id),
+    
+    CONSTRAINT uq_user_username UNIQUE (username),
+    CONSTRAINT uq_user_email UNIQUE (email),
+    CONSTRAINT uq_user_phone UNIQUE (phone),
+    CONSTRAINT uq_user_cod_fisc UNIQUE (cod_fisc)
+);
 
+CREATE TABLE IF NOT EXISTS trip_user_stat(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255),
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS trip_user(
+    id INT NOT NULL AUTO_INCREMENT,
+    id_trip INT NOT NULL,
+    id_user INT NOT NULL,
+    id_curr VARCHAR(3) NOT NULL,
+    id_trip_user_stat INT NOT NULL,
+    
+    trip_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    trip_end TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_trip) REFERENCES trip(id),
+    FOREIGN KEY (id_user) REFERENCES user(id),
+    FOREIGN KEY (id_curr) REFERENCES curr(id),
+    FOREIGN KEY (id_trip_user_stat) REFERENCES trip_user_stat(id)
+);
+
+CREATE TABLE IF NOT EXISTS path(
+    id INT NOT NULL AUTO_INCREMENT,
+    id_trip INT NOT NULL,
+    
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255),
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_trip) REFERENCES trip(id)
+);
+
+
+CREATE TABLE IF NOT EXISTS stag(
+    id INT NOT NULL AUTO_INCREMENT,
+    id_loct_start INT NOT NULL,
+    id_loct_end INT NOT NULL,
+
+    deration INT NOT NULL,
+    descr VARCHAR(255),
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_loct_start) REFERENCES loct(id),
+    FOREIGN KEY (id_loct_end) REFERENCES loct(id)
+);
+
+CREATE TABLE IF NOT EXISTS path_stag(
+    id INT NOT NULL AUTO_INCREMENT,
+    id_path INT NOT NULL,
+    id_stag INT NOT NULL,
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_path) REFERENCES path(id),
+    FOREIGN KEY (id_stag) REFERENCES stag(id)
+)
 
