@@ -25,3 +25,11 @@
 #navbar {
     background-color:rgb(204, 204, 211);
 }
+
+#operations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+}
