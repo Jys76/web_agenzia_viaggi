@@ -1,0 +1,74 @@
+
+/*===================================
+    NAVBAR
+===================================*/
+
+#navbar {
+    background-color: gray;
+    padding: 20px;
+}
+
+
+/*===================================
+    TITLE
+===================================*/
+
+
+#title_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+/*===================================
+    LINKS
+===================================*/
+
+#links_box {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+#links_box_1{
+    display: flex;
+    margin-right: auto;
+    gap: 20px
+}
+
+#links_box_2{
+    display: flex;
+    margin-left: auto;
+    gap: 20px;
+}
+
+
+
+#links_box a{
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+#links_box a:hover{
+    color: rgb(175, 16, 16);
+}
+
+.links_div{
+    background-color: rgb(206, 206, 206);
+    width: 100px;
+    text-align: center;
+}
+
+.links_div:hover {
+    background-color: rgb(170, 170, 170);
+}
+
+
+
+
+

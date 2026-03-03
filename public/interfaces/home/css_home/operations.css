@@ -1,0 +1,29 @@
+
+#operations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    background-color: gray;
+    margin-top: 200px;
+    gap: 60px;
+    font-size: 20px;
+}
+
+
+#operations div input{
+    margin-left: 10px;
+    background-color: rgb(226, 226, 226);
+}
+
+#operations button{
+    margin-left: 40px;
+    padding: 4px 10px;
+    background-color: rgb(211, 211, 211);
+}
+
+#operations button:hover{
+    background-color: rgb(160, 160, 160);
+    color: rgb(202, 19, 19);
+}
