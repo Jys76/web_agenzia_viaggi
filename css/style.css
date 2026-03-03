@@ -18,15 +18,33 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 10%;
 }
 
+.navbar_links{
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 100px;
+    background-color: sandybrown;
+    color: black;
+    text-align: center;
+}
+
+.navbar_links:hover{
+    color: white;
+}
 
 #navbar {
-    background-color:rgb(204, 204, 211);
+    background-color: gray;
+    padding: 20px;
 }
 
 #operations{
+    border-style: solid 2px;
+    height: 50px;
+    background-color: gray;
+    margin-top: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
