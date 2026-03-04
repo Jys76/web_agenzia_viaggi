@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css_home/navbar.css">
     <link rel="stylesheet" href="css_home/operations.css">
     <link rel="stylesheet" href="../../core/utility/style_utils.css">
+
+    <script src="js_home/navbar.js" defer></script>
 </head>
 <body>
 
@@ -19,7 +21,7 @@
             <div id="links_box_1">
                 <div class="links_div general_borders"><a href="#">Home</a></div>
                 <div class="links_div general_borders"><a href="../services/services.php">Servizi</a></div>
-                <div class="links_div general_borders"><a href="../travel/travel.php">Viaggia</a></div>
+                <div class="links_div general_borders"><a id="navbar_traver" href="../travel/travel.php">Viaggia</a></div>
                 <div class="links_div general_borders"><a href="../offers/offers.php">Offerte</a></div>
             </div>
 
@@ -30,6 +32,11 @@
         </div>
     </div>
 
+    <div id="travel_drop_box" class="general_borders">
+        <a href="#" class="general_borders">Continente</a>
+        <a href="#" class="general_borders">Nazione</a>
+        <a href="#" class="general_borders">Regione</a>
+    </div>
 
 
     <form id="operations" class="general_borders" method="POST">

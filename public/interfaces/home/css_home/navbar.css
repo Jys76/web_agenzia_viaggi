@@ -69,6 +69,38 @@
 }
 
 
+/*===================================
+    DROPDOWN
+===================================*/
+
+#travel_drop_box{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    gap: 20px;
+    background-color: gray;
+    padding: 20px 40px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+#travel_drop_box a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    background-color: rgb(206, 206, 206);
+    height: 30px;
+}
+
+#travel_drop_box a:hover{
+    color: rgb(175, 16, 16);
+    background-color: rgb(170, 170, 170);
+}
+
 
 
 
