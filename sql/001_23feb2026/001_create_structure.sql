@@ -1,0 +1,278 @@
+
+CREATE TABLE IF NOT EXISTS cont(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS natn(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cont INT NOT NULL,
+    name VARCHAR(64),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS regn(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_natn INT NOT NULL,
+    name VARCHAR(64),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS prov(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_regn INT NOT NULL,
+    name VARCHAR(64),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS city(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_prov INT NOT NULL,
+    name VARCHAR(64),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS loct(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_city INT NOT NULL,
+    address VARCHAR(128),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS curr(
+    id VARCHAR(3) NOT NULL PRIMARY KEY,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS sexx(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64),
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS seas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS apat(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_loct INT NOT NULL,
+    
+    stars INT NOT NULL,
+    n_roms INT NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS roms_stat(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS roms(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_apat INT NOT NULL,
+    id_roms_stat INT NOT NULL,
+    
+    beds INT NOT NULL,
+    rom_num INT NOT NULL,
+    descr VARCHAR(255)
+);
+
+
+CREATE TABLE IF NOT EXISTS trip_catg(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS trip(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_loct INT NOT NULL,
+    id_curr VARCHAR(3) NOT NULL,
+    id_apat INT NOT NULL,
+    id_trip_catg INT NOT NULL,
+    id_seas INT NOT NULL,
+
+    name VARCHAR(64) NOT NULL,
+    price DECIMAL(10, 2),
+    event_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    event_end TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS clie(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_loct INT NOT NULL,
+    id_sexx INT NOT NULL,
+    
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    cliename VARCHAR(64) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(14) NOT NULL,
+    cod_fisc VARCHAR(24) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS trip_clie_stat(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS trip_clie(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_trip INT NOT NULL,
+    id_clie INT NOT NULL,
+    id_curr VARCHAR(3) NOT NULL,
+    id_trip_clie_stat INT NOT NULL,
+
+    trip_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    trip_end TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS path(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_trip INT NOT NULL,
+    
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+
+CREATE TABLE IF NOT EXISTS stag(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_loct_start INT NOT NULL,
+    id_loct_end INT NOT NULL,
+
+    deration INT NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS path_stag(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_path INT NOT NULL,
+    id_stag INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS vehc_type(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS vehc(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_vehc_type INT NOT NULL,
+    
+    name VARCHAR(64) NOT NULL,
+    plate VARCHAR(36) NOT NULL,
+    a_class_sits INT,
+    b_class_sits INT,
+    c_class_sits INT
+);
+
+CREATE TABLE IF NOT EXISTS stag_vehc(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_stag INT NOT NULL,
+    id_vehc INT NOT NULL,
+
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tict(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_trip_clie INT NOT NULL,
+    
+    start_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    end_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    start_location VARCHAR(255) NOT NULL,
+    end_location VARCHAR(255) NOT NULL,
+    clie_first_name VARCHAR(64) NOT NULL,
+    clie_last_name VARCHAR(64) NOT NULL,
+    tict_price_value DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pers(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_sexx INT NOT NULL,
+
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    cod_fisc VARCHAR(64) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tict_pers(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_tict INT NOT NULL,
+    id_pers INT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS card_type(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS card(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_card_type INT NOT NULL,
+
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    card_number VARCHAR(64) NOT NULL,
+    expriration_date VARCHAR(5) NOT NULL,
+    cvv VARCHAR(3) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS paym_stat(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS paym_metd(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS paym(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_trip_clie INT NOT NULL,
+    id_card INT NOT NULL,
+    id_curr VARCHAR(3) NOT NULL,
+    id_paym_stat INT NOT NULL,
+    id_paym_metd INT NOT NULL,
+
+    quantity DECIMAL(10,2) NOT NULL,
+    start_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    end_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    pay_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS path_pren(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS roms_pren(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+);
