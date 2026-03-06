@@ -4,17 +4,18 @@ ALTER TABLE regn ADD CONSTRAINT fk_regn_id_natn FOREIGN KEY(id_natn) REFERENCES 
 ALTER TABLE prov ADD CONSTRAINT fk_prov_id_regn FOREIGN KEY(id_regn) REFERENCES regn(id);
 ALTER TABLE city ADD CONSTRAINT fk_city_id_prov FOREIGN KEY(id_prov) REFERENCES prov(id);
 ALTER TABLE loct ADD CONSTRAINT fk_lock_id_city FOREIGN KEY(id_city) REFERENCES city(id);
-ALTER TABLE apat ADD CONSTRAINT fk_apat_id_loct FOREIGN KEY (id_loct) REFERENCES loct(id);
+ALTER TABLE accm 
+    ADD CONSTRAINT fk_apat_id_loct FOREIGN KEY (id_loct) REFERENCES loct(id),
+    ADD CONSTRAINT fk_accm_id_accm_type FOREIGN KEY (id_accm_type) REFERENCES accm_type(id);
 
 ALTER TABLE roms
-    ADD CONSTRAINT fk_roms_id_apat FOREIGN KEY (id_apat) REFERENCES apat(id),
+    ADD CONSTRAINT fk_roms_id_accm FOREIGN KEY (id_accm) REFERENCES accm(id),
     ADD CONSTRAINT fk_roms_id_roms_stat FOREIGN KEY (id_roms_stat) REFERENCES roms_stat(id);
-
 
 ALTER TABLE trip
     ADD CONSTRAINT fk_trip_id_loct FOREIGN KEY (id_loct) REFERENCES loct(id),
     ADD CONSTRAINT fk_trip_id_curr FOREIGN KEY (id_curr) REFERENCES curr(id),
-    ADD CONSTRAINT fk_trip_id_apat FOREIGN KEY (id_apat) REFERENCES apat(id),
+    ADD CONSTRAINT fk_trip_id_accm FOREIGN KEY (id_accm) REFERENCES accm(id),
     ADD CONSTRAINT fk_trip_id_trip_catg FOREIGN KEY (id_trip_catg) REFERENCES trip_catg(id),
     ADD CONSTRAINT fk_trip_id_seas FOREIGN KEY (id_seas) REFERENCES seas(id);
 

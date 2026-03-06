@@ -1,0 +1,61 @@
+
+/*===========================
+    SLIDESHOW BOX
+===========================*/
+
+#slideshow_box{
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    height: 500px;
+}
+
+.slideshow_images{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/*===========================
+    BUTTONS
+===========================*/
+
+#slideshow_next, #slideshow_next div{
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+
+#slideshow_prev, #slideshow_prev div{
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+}
+
+#slideshow_next div:hover, #slideshow_prev div:hover{
+    background-color: rgb(156, 156, 156);
+}
+
+#slideshow_next, #slideshow_prev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#slideshow_next div, #slideshow_prev div{
+    background-color: rgb(194, 194, 194);
+    height: 21px;
+    width: 21px;
+}
+
+#slideshow_next{
+    right: 15px;
+}
+
+#slideshow_prev{
+    left: 15px;
+}

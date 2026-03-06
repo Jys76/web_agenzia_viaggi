@@ -36,53 +36,59 @@
 #links_box_1{
     display: flex;
     margin-right: auto;
-    gap: 20px
+    gap: 20px;
+    cursor: default;
 }
 
 #links_box_2{
     display: flex;
     margin-left: auto;
     gap: 20px;
+    cursor: pointer;
 }
 
 
 
-#links_box a{
+.navbar_links{
     display: block;
     padding: 5px;
     text-decoration: none;
     color: black;
-}
-
-#links_box a:hover{
-    color: rgb(175, 16, 16);
-}
-
-.links_div{
     background-color: rgb(206, 206, 206);
     width: 100px;
     text-align: center;
 }
 
-.links_div:hover {
+.navbar_links:hover{
+    color: rgb(175, 16, 16);
     background-color: rgb(170, 170, 170);
 }
+
 
 
 /*===================================
     DROPDOWN
 ===================================*/
 
+#travel_drop_box a:hover, 
+#offers_drop_box a:hover{
+    color: rgb(175, 16, 16);
+    background-color: rgb(170, 170, 170);
+}
+
 #travel_drop_box{
+    position: absolute;
+    z-index: 999;
     display: none;
     align-items: center;
     flex-direction: column;
+
     width: 250px;
     gap: 20px;
     background-color: gray;
     padding: 20px 40px;
     margin-top: 10px;
-    position: absolute;
+
 }
 
 #travel_drop_box a{
@@ -96,10 +102,33 @@
     height: 30px;
 }
 
-#travel_drop_box a:hover{
-    color: rgb(175, 16, 16);
-    background-color: rgb(170, 170, 170);
+
+#offers_drop_box{
+    position: absolute;
+    z-index: 999;
+    
+    display: none;
+    align-items: center;
+    flex-direction: column;
+
+    width: 250px;
+    padding: 20px 40px;
+    gap: 20px;
+    background-color: gray;
+    margin-top: 10px;
 }
+
+#offers_drop_box a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    background-color: rgb(206, 206, 206);
+    height: 30px;
+}
+
 
 
 

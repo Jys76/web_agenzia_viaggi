@@ -64,11 +64,16 @@ CREATE TABLE IF NOT EXISTS seas(
 
 
 
+CREATE TABLE IF NOT EXISTS accm_type(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    descr VARCHAR(255)
+)
 
-
-CREATE TABLE IF NOT EXISTS apat(
+CREATE TABLE IF NOT EXISTS accm(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_loct INT NOT NULL,
+    id_accm_type INT NOT NULL,
     
     stars INT NOT NULL,
     n_roms INT NOT NULL,
@@ -83,7 +88,7 @@ CREATE TABLE IF NOT EXISTS roms_stat(
 
 CREATE TABLE IF NOT EXISTS roms(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_apat INT NOT NULL,
+    id_accm INT NOT NULL,
     id_roms_stat INT NOT NULL,
     
     beds INT NOT NULL,
@@ -102,7 +107,7 @@ CREATE TABLE IF NOT EXISTS trip(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_loct INT NOT NULL,
     id_curr VARCHAR(3) NOT NULL,
-    id_apat INT NOT NULL,
+    id_accm INT NOT NULL,
     id_trip_catg INT NOT NULL,
     id_seas INT NOT NULL,
 

@@ -4,10 +4,14 @@
     <title> Viva la Cina</title>
     <link rel="stylesheet" href="style_home.css">
     <link rel="stylesheet" href="css_home/navbar.css">
-    <link rel="stylesheet" href="css_home/operations.css">
+    <link rel="stylesheet" href="css_home/operation.css">
+    <link rel="stylesheet" href="css_home/slideshow.css">
+    
     <link rel="stylesheet" href="../../core/utility/style_utils.css">
-
+    
     <script src="js_home/navbar.js" defer></script>
+    <script src="js_home/slideshow.js" defer></script>
+    
 </head>
 <body>
 
@@ -19,24 +23,46 @@
         <div id="links_box">
 
             <div id="links_box_1">
-                <div class="links_div general_borders"><a href="#">Home</a></div>
-                <div class="links_div general_borders"><a href="../services/services.php">Servizi</a></div>
-                <div class="links_div general_borders"><a id="navbar_traver" href="../travel/travel.php">Viaggia</a></div>
-                <div class="links_div general_borders"><a href="../offers/offers.php">Offerte</a></div>
+                <div id="navbar_services" class="navbar_links general_borders">Servizi</div>
+                <div id="navbar_traver" class="navbar_links general_borders">Viaggia</div>
+                <div id="navbar_offers" class="navbar_links general_borders">Offerte</div>
             </div>
 
             <div id="links_box_2">
-                <div class="links_div general_borders"><a href="../login/login.php">Login</a></div>
-                <div class="links_div general_borders"><a href="../Register/Register.php">Register</a></div>
+                <a class="navbar_links general_borders" href="../login/login.php">Login</a></div>
+                <a class="navbar_links general_borders" href="../Register/Register.php">Register</a></div>
             </div>
+
         </div>
     </div>
 
-    <div id="travel_drop_box" class="general_borders">
-        <a href="#" class="general_borders">Continente</a>
-        <a href="#" class="general_borders">Nazione</a>
-        <a href="#" class="general_borders">Regione</a>
+
+
+    <div id="travel_drop_box" class="drop_box general_borders">
+        <a href="#" class="drop_box_links general_borders">Per Continente</a>
+        <a href="#" class="drop_box_links general_borders">Per Nazione</a>
+        <a href="#" class="drop_box_links general_borders">Per Regione</a>
     </div>
+
+    <div id="offers_drop_box" class="drop_box general_borders">
+        <a href="#" class="drop_box_links general_borders">Viaggia in gruppo</a>
+        <a href="#" class="drop_box_links general_borders">Offerte speciali</a>
+    </div>
+
+
+
+
+
+    <div id="slideshow_box" class="general_borders">
+        <img class="slideshow_images" src="home_images/gray1.jpg" alt="gray1">
+        <img class="slideshow_images" src="home_images/gray2.jpg" alt="gray2">
+        <img class="slideshow_images" src="home_images/gray3.jpg" alt="gray3">
+        <div id="slideshow_next"><div onclick="show_next_slide()"></div></div>
+        <div id="slideshow_prev"><div onclick="show_prev_slide()"></div></div>
+    </div>
+
+
+   
 
 
     <form id="operations" class="general_borders" method="POST">

@@ -6,11 +6,10 @@
 
     height: 50px;
     background-color: gray;
-    margin-top: 200px;
+    margin-top: 50px;
     gap: 60px;
     font-size: 20px;
 }
-
 
 #operations div input{
     margin-left: 10px;
