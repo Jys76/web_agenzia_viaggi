@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS clie(
     
     first_name VARCHAR(64) NOT NULL,
     last_name VARCHAR(64) NOT NULL,
-    cliename VARCHAR(64) NOT NULL,
+    username VARCHAR(64) NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     phone VARCHAR(14) NOT NULL,
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS stag(
     id_loct_start INT NOT NULL,
     id_loct_end INT NOT NULL,
 
-    deration INT NOT NULL,
+    duration INT NOT NULL,
     descr VARCHAR(255)
 );
 
@@ -242,7 +242,7 @@ CREATE TABLE IF NOT EXISTS card(
     first_name VARCHAR(64) NOT NULL,
     last_name VARCHAR(64) NOT NULL,
     card_number VARCHAR(64) NOT NULL,
-    expriration_date VARCHAR(5) NOT NULL,
+    expiration_date VARCHAR(5) NOT NULL,
     cvv VARCHAR(3) NOT NULL
 );
 

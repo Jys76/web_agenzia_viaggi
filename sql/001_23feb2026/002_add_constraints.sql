@@ -44,7 +44,7 @@ ALTER TABLE clie
     ADD CONSTRAINT fk_clie_id_sexx FOREIGN KEY(id_sexx) REFERENCES sexx(id)
         ON UPDATE CASCADE ON DELETE NO ACTION,
 
-    ADD CONSTRAINT uq_clie_cliename UNIQUE (cliename),
+    ADD CONSTRAINT uq_clie_username UNIQUE (username),
     ADD CONSTRAINT uq_clie_email UNIQUE (email),
     ADD CONSTRAINT uq_clie_phone UNIQUE (phone),
     ADD CONSTRAINT uq_clie_cod_fisc UNIQUE (cod_fisc);

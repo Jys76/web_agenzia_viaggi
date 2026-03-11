@@ -9,4 +9,7 @@
     define('HOME_BACK_URL', PATH_ROOT . '/backend/runtimes/home/home_back.php');
     define('HOME_PUBL_URL', URL_ROOT . '/public/interfaces/home/home.php');
 
+    define('LOGIN_BACK_URL', PATH_ROOT . '/backend/runtimes/login/login_back.php');
+    define('LOGIN_PUBL_URL', URL_ROOT . '/public/interfaces/login/login.php');
+
 ?>
