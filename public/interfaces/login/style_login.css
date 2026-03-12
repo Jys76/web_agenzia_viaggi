@@ -15,12 +15,15 @@ body{
 ============================================*/
 
 #center{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 500px;
+    width: 700px;
+    height: 500px;
     gap: 10px;
+    background-color: rgb(177, 177, 177);
 }
 
 /*============================================
@@ -32,15 +35,33 @@ body{
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    width: 100%;
-    height: 40px;
-    background-color: rgb(161, 161, 161);
+    width: 500px;
+    height: 50px;
+    background-color: rgb(160, 160, 160);
 }
 
 #navbar div{
     margin-left: auto;
     display: flex;
     gap: 10px;
+}
+
+#navbar a{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 3px;
+    width: 70px;
+    height: 20px;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(192, 192, 192);
+}
+
+#navbar a:hover{
+    background-color: rgb(172, 172, 172);
+    color: rgb(156, 17, 17);
 }
 
 /*============================================
@@ -53,9 +74,9 @@ body{
     align-items: center;
     flex-direction: column;
     height: 300px;
-    width: 100%;
+    width: 500px;
 
-    background-color: rgb(161, 161, 161);
+    background-color: rgb(160, 160, 160);
 }
 
 #login_form{
@@ -71,7 +92,7 @@ body{
 }
 
 #login_form input{
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(219, 219, 219);
 }
 
 

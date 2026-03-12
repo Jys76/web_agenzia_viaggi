@@ -33,10 +33,7 @@
                     <div id="navbar_offers" class="navbar_links general_borders">Offerte</div>
                 </div>
 
-                <div id="links_box_2">
-                    <a class="navbar_links general_borders" href="<?=LOGIN_PUBL_URL?>" >Login</a></div>
-                    <a class="navbar_links general_borders" href="<?=REGISTER_PUBL_URL?>">Register</a></div>
-                </div>
+                <?php evaluate_login() ?>
 
             </div>
         </div>

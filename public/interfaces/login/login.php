@@ -11,19 +11,19 @@
     </head>
     <body>
 
-        <div id="center">
+        <div id="center" class="inverted_general_borders">
 
             <div id="navbar" class="general_borders">
-                <p>WanderWave Travel</p>
+                <h3>WanderWave Travel</h3>
                 <div>
-                    <a href="<?=HOME_PUBL_URL?>">Home</a>
-                    <a href="#">Register</a>
+                    <a href="<?=HOME_PUBL_URL?>" class="general_borders">Home</a>
+                    <a href="<?=REGISTER_PUBL_URL?>" class="general_borders">Register</a>
                 </div>
             </div>
 
             <div id="login_box" class="general_borders">
                 <h1>Login</h1>
-                <form id="login_form" action="">
+                <form id="login_form" action="" method="POST">
 
                     <label for="email_input">Email</label>
                     <input type="text" name="email_input" placeholder="Insert here"><br>
@@ -34,6 +34,12 @@
                     <button type="submit" >Login</button>
                 </form>
             </div>
+
+            <?php 
+                if($login_message !== ""){
+                    echo "<p style='position: absolute; bottom: 10px'>" . $login_message . "</p>";
+                }
+            ?>
 
         </div>
 
