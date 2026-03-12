@@ -1,7 +1,7 @@
 
 <?php
     require __DIR__ . '/../../../settings/path_config.php';
-    require HOME_BACK_URL;
+    require HOME_BACK_PATH;
 ?>
 
 <html>
@@ -34,8 +34,8 @@
                 </div>
 
                 <div id="links_box_2">
-                    <a class="navbar_links general_borders" href= "<?=LOGIN_PUBL_URL?>" >Login</a></div>
-                    <a class="navbar_links general_borders" href="../Register/Register.php">Register</a></div>
+                    <a class="navbar_links general_borders" href="<?=LOGIN_PUBL_URL?>" >Login</a></div>
+                    <a class="navbar_links general_borders" href="<?=REGISTER_PUBL_URL?>">Register</a></div>
                 </div>
 
             </div>

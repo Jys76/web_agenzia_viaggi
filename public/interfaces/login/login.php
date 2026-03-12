@@ -1,13 +1,13 @@
 
 <?php
     require __DIR__ . '/../../../settings/path_config.php';
-    require LOGIN_BACK_URL;
+    require LOGIN_BACK_PATH;
 ?>
 
 <html>
     <head>
         <link rel="stylesheet" href="style_login.css">
-        <link rel="stylesheet" href="../../core/utility/style_utils.css">
+        <link rel="stylesheet" href="<?=STYLE_UTILS_URL?>">
     </head>
     <body>
 

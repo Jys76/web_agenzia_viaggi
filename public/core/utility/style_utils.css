@@ -3,3 +3,10 @@
     border: 1px solid black;
     box-shadow: 3px 2px 2px rgb(63, 63, 63);
 }
+
+.inverted_general_borders{
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
