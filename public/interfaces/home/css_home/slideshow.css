@@ -21,16 +21,16 @@
     BUTTONS
 ===========================*/
 
-#slideshow_next, #slideshow_next div{
+#slideshow_next{
     clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 }
 
-#slideshow_prev, #slideshow_prev div{
+#slideshow_prev{
     clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 }
 
-#slideshow_next div:hover, #slideshow_prev div:hover{
-    background-color: rgb(156, 156, 156);
+#slideshow_next:hover, #slideshow_prev:hover{
+    background-color: rgb(211, 211, 211);
 }
 
 #slideshow_next, #slideshow_prev{
@@ -42,7 +42,7 @@
     top: 50%;
     height: 25px;
     width: 25px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
 

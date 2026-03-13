@@ -1,6 +1,5 @@
 
 body{
-    background-color: rgb(116, 116, 116);
     margin: 0;
     padding: 0;
 
@@ -8,6 +7,15 @@ body{
     justify-content: center;
     align-items: center;
 
+    background-image: url("login_images/sea1.jpg");
+    background-position: center;
+}
+
+body:before{
+    content: "";
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    inset: 0;
 }
 
 /*============================================
@@ -20,10 +28,19 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 700px;
-    height: 500px;
+    width: 50%;
+    height: 100%;
     gap: 10px;
-    background-color: rgb(177, 177, 177);
+    z-index: 0;
+}
+
+#center:before{
+    content: "";
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    filter: blur(5px);
+    inset: 0;
+    
 }
 
 /*============================================
@@ -34,10 +51,16 @@ body{
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 999;
     padding: 10px 20px;
     width: 500px;
     height: 50px;
-    background-color: rgb(160, 160, 160);
+    /*background-color: rgb(116, 135, 219);*/
+}
+
+#navbar h3{
+    color: white;
 }
 
 #navbar div{
@@ -69,14 +92,20 @@ body{
 ============================================*/
 
 #login_box{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 999;
     height: 300px;
     width: 500px;
 
-    background-color: rgb(160, 160, 160);
+    /*background-color: rgb(116, 135, 219);*/
+}
+
+#login_box h1{
+    color: white;
 }
 
 #login_form{
@@ -85,6 +114,7 @@ body{
     justify-content: center;
     width: 200px;
     padding: 10px;
+    color: white;
 }
 
 #login_form button{

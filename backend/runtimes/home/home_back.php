@@ -12,8 +12,8 @@
             ob_start();
             ?>
             <div id="links_box_2">
-                <a class="navbar_links general_borders" href="<?=LOGIN_PUBL_URL?>">Login</a></div>
-                <a class="navbar_links general_borders" href="<?=REGISTER_PUBL_URL?>">Register</a></div>
+                <a class="navbar_links" href="<?=LOGIN_PUBL_URL?>">LOGIN</a></div>
+                <a class="navbar_links" href="<?=REGISTER_PUBL_URL?>">REGISTER</a></div>
             </div>
             <?php
             echo ob_get_clean();

@@ -13,6 +13,10 @@
         <link rel="stylesheet" href="css_home/slideshow.css">
         
         <link rel="stylesheet" href="../../core/utility/style_utils.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
         
         <script src="js_home/navbar.js" defer></script>
         <script src="js_home/slideshow.js" defer></script>
@@ -21,16 +25,16 @@
     <body>
 
 
-        <div id="navbar" class="general_borders">
+        <div id="navbar">
 
             <div id="title_box"><h1>WanderWave Travel</h1></div>
 
             <div id="links_box">
 
                 <div id="links_box_1">
-                    <div id="navbar_services" class="navbar_links general_borders">Servizi</div>
-                    <div id="navbar_traver" class="navbar_links general_borders">Viaggia</div>
-                    <div id="navbar_offers" class="navbar_links general_borders">Offerte</div>
+                    <div id="navbar_services" class="navbar_links">SERVIZI</div>
+                    <div id="navbar_traver" class="navbar_links">VIAGGIA</div>
+                    <div id="navbar_offers" class="navbar_links">OFFERTE</div>
                 </div>
 
                 <?php evaluate_login() ?>
@@ -59,8 +63,8 @@
             <img class="slideshow_images" src="home_images/gray1.jpg" alt="gray1">
             <img class="slideshow_images" src="home_images/gray2.jpg" alt="gray2">
             <img class="slideshow_images" src="home_images/gray3.jpg" alt="gray3">
-            <div id="slideshow_next"><div onclick="show_next_slide()"></div></div>
-            <div id="slideshow_prev"><div onclick="show_prev_slide()"></div></div>
+            <div id="slideshow_next" onclick="show_next_slide()"></div>
+            <div id="slideshow_prev" onclick="show_prev_slide()"></div>
         </div>
 
 

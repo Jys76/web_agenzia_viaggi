@@ -4,8 +4,8 @@
 ===================================*/
 
 #navbar {
-    background-color: gray;
-    padding: 20px;
+    background-color: rgb(116, 135, 219);
+    padding: 20px 15% 20px 15%;
 }
 
 #navbar_username{
@@ -25,6 +25,12 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    color: white;
+}
+
+#title_box h1{
+    font-family: 'Lobster Two', sans-serif;
+    letter-spacing: 1px;
 }
 
 /*===================================
@@ -56,18 +62,20 @@
 
 
 .navbar_links{
+    font-family: 'Roboto', sans-serif;
     display: block;
-    padding: 5px;
+    padding: 10px;
     text-decoration: none;
-    color: black;
-    background-color: rgb(206, 206, 206);
-    width: 100px;
+    color: rgb(255, 255, 255);
+    width: 120px;
     text-align: center;
+    cursor: pointer;
+    border-top: 1px solid rgb(85, 102, 175);
 }
 
 .navbar_links:hover{
-    color: rgb(175, 16, 16);
-    background-color: rgb(170, 170, 170);
+    color: rgb(41, 41, 41);
+    background-color: rgb(133, 150, 226);
 }
 
 

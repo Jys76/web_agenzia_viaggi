@@ -11,7 +11,7 @@
     </head>
     <body>
 
-        <div id="center" class="inverted_general_borders">
+        <div id="center">
 
             <div id="navbar" class="general_borders">
                 <h3>WanderWave Travel</h3>
