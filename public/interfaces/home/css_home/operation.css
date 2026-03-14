@@ -1,28 +1,60 @@
 
-#operations{
+#operations_box{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 
     height: 50px;
-    background-color: gray;
     margin-top: 50px;
     gap: 60px;
     font-size: 20px;
+
+    background: rgba(0,0,0,0.5);
+    
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
 }
 
-#operations div input{
+#operations_box div input{
     margin-left: 10px;
-    background-color: rgb(226, 226, 226);
+    background: rgba(206, 206, 206, 0.1);
 }
 
-#operations button{
+#outbound_data_input[type="date"]::-webkit-calendar-picker-indicator,
+#inbound_data_input[type="date"]::-webkit-calendar-picker-indicator{
+    background-color: rgb(90, 90, 90);
+}
+
+#outbound_data_input,
+#inbound_data_input,
+#search_city_input{
+    border-bottom: 2px solid rgb(78, 78, 78);
+    border-right: 2px solid rgb(78, 78, 78);
+}
+
+#outbound_data_input:focus,
+#inbound_data_input:focus,
+#search_city_input:focus{
+    border-color: rgb(92, 92, 92);
+    outline: none;
+}
+
+#outbound_data_input,
+#inbound_data_input{
+    color: gray;
+}
+
+#operations_box button{
     margin-left: 40px;
     padding: 4px 10px;
-    background-color: rgb(211, 211, 211);
+    background: rgba(206, 206, 206, 0.1);
+    border: 1px solid rgb(97, 97, 97);
 }
 
-#operations button:hover{
-    background-color: rgb(160, 160, 160);
-    color: rgb(202, 19, 19);
+#operations_box button:hover{
+    color: rgb(156, 156, 156);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }

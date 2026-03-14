@@ -18,7 +18,7 @@ function show_slide(){
     if(index == slides.length){
         index = 0;
     }
-    slide_timer = setTimeout(show_slide, 2000);
+    slide_timer = setTimeout(show_slide, 4000);
 }
 
 

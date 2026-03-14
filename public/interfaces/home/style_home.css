@@ -3,8 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color-scheme: dark;
+    color: white;
 }
 
 body{
-    background-color: rgb(255, 255, 255);
+    background-image: url("home_images/sea1.jpg");
+}
+
+body:before{
+    content: "";
+    background: rgba(0,0,0,0.5);
+    inset: 0;
+    position: absolute;
+    z-index: 0;
 }

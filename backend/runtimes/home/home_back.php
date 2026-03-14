@@ -6,7 +6,7 @@
 
         if(isset($_SESSION['username'])){
             echo "<p id='navbar_username'>User: " . $_SESSION['username'] . "</p>";
-            echo '<a class="navbar_links general_borders" href="'.LOGOUT_URL.'">Logout</a>';
+            echo '<a class="navbar_links" href="'.LOGOUT_URL.'">Logout</a>';
         }
         else{
             ob_start();

@@ -4,14 +4,16 @@
 ===================================*/
 
 #navbar {
-    background-color: rgb(116, 135, 219);
+    position: relative;
+    background: rgba(0,0,0,0.5);
     padding: 20px 15% 20px 15%;
+    z-index: 999;
 }
 
 #navbar_username{
     font-size: 20px;
-    color: rgb(238, 238, 238);
-    text-decoration: underline;
+    
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -25,7 +27,6 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    color: white;
 }
 
 #title_box h1{
@@ -59,8 +60,6 @@
     cursor: pointer;
 }
 
-
-
 .navbar_links{
     font-family: 'Roboto', sans-serif;
     display: block;
@@ -74,8 +73,8 @@
 }
 
 .navbar_links:hover{
-    color: rgb(41, 41, 41);
-    background-color: rgb(133, 150, 226);
+    color: rgb(172, 183, 231);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -86,61 +85,54 @@
 
 #travel_drop_box a:hover, 
 #offers_drop_box a:hover{
-    color: rgb(175, 16, 16);
-    background-color: rgb(170, 170, 170);
+    color: rgb(172, 183, 231);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #travel_drop_box{
+    width: 250px;
+}
+
+#offers_drop_box{
+    width: 300px;
+}
+
+#travel_drop_box,
+#offers_drop_box{
     position: absolute;
     z-index: 999;
     display: none;
     align-items: center;
     flex-direction: column;
 
-    width: 250px;
     gap: 20px;
-    background-color: gray;
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px 40px;
     margin-top: 10px;
+
+    border: 1px solid  black;
 
 }
 
 #travel_drop_box a{
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 10px 20px;
     width: 100%;
-    color: black;
     text-decoration: none;
-    background-color: rgb(206, 206, 206);
     height: 30px;
+    font-family: 'roboto', sans-serif;
 }
 
-
-#offers_drop_box{
-    position: absolute;
-    z-index: 999;
-    
-    display: none;
-    align-items: center;
-    flex-direction: column;
-
-    width: 250px;
-    padding: 20px 40px;
-    gap: 20px;
-    background-color: gray;
-    margin-top: 10px;
-}
 
 #offers_drop_box a{
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 10px 20px;
     width: 100%;
-    color: black;
     text-decoration: none;
-    background-color: rgb(206, 206, 206);
     height: 30px;
+    font-family: 'roboto', sans-serif;
 }
 
 

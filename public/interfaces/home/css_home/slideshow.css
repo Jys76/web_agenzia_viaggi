@@ -4,15 +4,21 @@
 ===========================*/
 
 #slideshow_box{
+    display: flex;
     position: relative;
-    z-index: 1;
-    margin-top: 30px;
-    height: 500px;
+    z-index: 888;
+    height: 50%;
+    width: 60%;
+    margin: 50px 20% 0 20%;
+    border: 1px solid black;
 }
 
 .slideshow_images{
     height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(80%);
 }
 
 
@@ -30,7 +36,7 @@
 }
 
 #slideshow_next:hover, #slideshow_prev:hover{
-    background-color: rgb(211, 211, 211);
+    background-color: rgba(211, 211, 211, 0.5);
 }
 
 #slideshow_next, #slideshow_prev{
@@ -42,14 +48,8 @@
     top: 50%;
     height: 25px;
     width: 25px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-}
-
-#slideshow_next div, #slideshow_prev div{
-    background-color: rgb(194, 194, 194);
-    height: 21px;
-    width: 21px;
 }
 
 #slideshow_next{

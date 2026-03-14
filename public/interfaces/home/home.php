@@ -44,25 +44,27 @@
 
 
 
-        <div id="travel_drop_box" class="drop_box general_borders">
-            <a href="#" class="drop_box_links general_borders">Per Continente</a>
-            <a href="#" class="drop_box_links general_borders">Per Nazione</a>
-            <a href="#" class="drop_box_links general_borders">Per Regione</a>
+        <div id="travel_drop_box" class="drop_box">
+            <a href="#" class="drop_box_links">EUROPA</a>
+            <a href="#" class="drop_box_links">AMERICA</a>
+            <a href="#" class="drop_box_links">AFRICA</a>
+            <a href="#" class="drop_box_links">ASIA</a>
+            <a href="#" class="drop_box_links">AUSTRALIA</a>
         </div>
 
-        <div id="offers_drop_box" class="drop_box general_borders">
-            <a href="#" class="drop_box_links general_borders">Viaggia in gruppo</a>
-            <a href="#" class="drop_box_links general_borders">Offerte speciali</a>
+        <div id="offers_drop_box" class="drop_box">
+            <a href="#" class="drop_box_links">VIAGGIA IN GRUPPO</a>
+            <a href="#" class="drop_box_links">VIAGGI SPECIALI</a>
         </div>
 
 
 
 
 
-        <div id="slideshow_box" class="general_borders">
-            <img class="slideshow_images" src="home_images/gray1.jpg" alt="gray1">
-            <img class="slideshow_images" src="home_images/gray2.jpg" alt="gray2">
-            <img class="slideshow_images" src="home_images/gray3.jpg" alt="gray3">
+        <div id="slideshow_box">
+            <img class="slideshow_images" src="home_images/slide1.jpg" alt="gray1">
+            <img class="slideshow_images" src="home_images/slide2.jpg" alt="gray2">
+            <img class="slideshow_images" src="home_images/slide3.jpg" alt="gray3">
             <div id="slideshow_next" onclick="show_next_slide()"></div>
             <div id="slideshow_prev" onclick="show_prev_slide()"></div>
         </div>
@@ -71,7 +73,7 @@
     
 
 
-        <form id="operations" class="general_borders" method="POST">
+        <form id="operations_box" class="general_borders" method="POST">
             
             <div id="reserch_city_box">  
                 <label for="search_city">Dove vuoi andare?</label>
