@@ -1,6 +1,6 @@
 
 <?php
-    require_once __DIR__ . "/../../../settings/path_config.php";
+    require_once __DIR__ . "/../../core/settings/path_config.php";
     require_once CONSOLE_UTIL_PATH;
 
     session_start();

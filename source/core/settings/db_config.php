@@ -1,6 +1,5 @@
 
 <?php
-    
     require_once CONSOLE_UTIL_PATH;
 
     function open_conn($action_name, $console_path){
@@ -19,4 +18,3 @@
     }
 
 ?>
-

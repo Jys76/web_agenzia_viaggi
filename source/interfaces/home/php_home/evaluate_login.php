@@ -1,4 +1,4 @@
-
+    
 <?php
     require_once DB_CONFIG_PATH;
     require_once QUERY_UTIL_PATH;
@@ -23,7 +23,3 @@
             echo ob_get_clean();
         }
     }
-    
-    
-
-?>

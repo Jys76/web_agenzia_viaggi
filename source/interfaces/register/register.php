@@ -1,12 +1,13 @@
 <?php
-    require_once __DIR__ . '/../../../settings/path_config.php';
-    require_once REGISTER_BACK_PATH;
+    require_once __DIR__ . '/../../core/settings/path_config.php';
+    require_once REGISTER_EVALUATE_REGISTER_FPATH;
+    require_once REGISTER_DATA_LOAD_REGISTER_FPATH;
 ?>
 
 <html>
     <head>
         <link rel="stylesheet" href="style_register.css">
-        <link rel="stylesheet" href="<?=STYLE_UTILS_URL?>">
+        <link rel="stylesheet" href="<?=STYLE_UTIL_URL?>">
     </head>
     <body>
         <div id="center" class="inverted_general_borders">

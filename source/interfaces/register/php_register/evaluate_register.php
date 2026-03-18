@@ -99,6 +99,3 @@
             $register_message = "You must insert all the values";
         }
     }
-
-    require "data_load_register.php";
-?>

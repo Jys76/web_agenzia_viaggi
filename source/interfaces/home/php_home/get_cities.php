@@ -1,6 +1,6 @@
 
 <?php
-    require_once __DIR__ . "/../../../../settings/path_config.php";
+    require_once __DIR__ . "/../../../core/settings/path_config.php";
 
     require_once DB_CONFIG_PATH;
     require_once QUERY_UTIL_PATH;

@@ -13,7 +13,7 @@
 
         if($email !== "" && $password !== ""){
         
-            $conn = open_conn("LOGIN", DB_CONFIG_PATH);
+            $conn = open_conn("LOGIN", DEFAULT_LOG_FPATH);
             $login_sql = "SELECT id, username FROM clie WHERE email = ? AND password = ?";
 
             $stmt = mysqli_prepare($conn, $login_sql);
@@ -22,6 +22,7 @@
             $login_sql_result = mysqli_stmt_get_result($stmt);
 
             if(mysqli_num_rows($login_sql_result) != 0){
+
                 $_SESSION['username'] = mysqli_fetch_assoc($login_sql_result)['username'];
                 write_console('USER: ' . $_SESSION['username'] . ' LOGIN', DEFAULT_LOG_FPATH);
                 header("Location: " . HOME_PUBL_URL);

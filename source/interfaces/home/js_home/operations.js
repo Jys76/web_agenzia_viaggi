@@ -3,19 +3,17 @@ const city_input_dropdown = document.getElementById("city_input_dropdown");
 
 let cities = [];
 
-/* file URL thant need to change*/
 
-async function load_cities(){
-    const response = await fetch("/web_agenzia_viaggi/public/interfaces/home/php_home/get_cities.php");
+
+async function load_cities(get_cities_path){
+    const response = await fetch(get_cities_path);
     cities = await response.json();
-    console.log(cities);
 }
 
 
+async function operations_init(get_cities_path){
 
-async function operations_init(){
-
-    await load_cities();
+    await load_cities(get_cities_path);
 
     city_input.addEventListener("input", () => {
 
@@ -51,6 +49,4 @@ async function operations_init(){
     });
 
 }
-
-operations_init();
 
