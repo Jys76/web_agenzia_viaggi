@@ -1,7 +1,8 @@
 
 <?php
-    require DB_CONFIG_PATH;
-    require QUERY_UTIL_PATH;
+    require_once DB_CONFIG_PATH;
+    require_once QUERY_UTIL_PATH;
+    require_once CONSOLE_UTIL_PATH;
 
     $register_message = "";
 
@@ -41,16 +42,17 @@
             $phone !== ""
         ){
             $city_exists_sql = "SELECT id FROM city WHERE name = ? LIMIT 1";
-            
+            $conn = open_conn("REGISTER", DEFAULT_LOG_FPATH);
+
             try{
-                $stmt = mysqli_prepare(CONN, $city_exists_sql);
+                $stmt = mysqli_prepare($conn, $city_exists_sql);
                 mysqli_stmt_bind_param($stmt, "s", $city);
                 mysqli_stmt_execute($stmt);
                 $city_exists_sql_result = mysqli_stmt_get_result($stmt);
             }
             catch(mysqli_sql_exception $e){
-                $message = "[" . date('Y-m-d H-i-s') . "] Query select error: " . $e->GetMessage();
-                file_put_contents(DEFAULT_LOG_FPATH, $message, FILE_APPEND);
+                $message = "Query select error: " . $e->GetMessage();
+                write_console($message, DEFAULT_LOG_FPATH);
             }
             
             if(mysqli_num_rows($city_exists_sql_result) != 0){
@@ -59,30 +61,34 @@
                 $loct_insert_sql = "INSERT INTO loct (id_city, address) VALUES (?, ?)";
                 $clie_insert_sql = "INSERT INTO clie (id_loct, id_sexx, first_name, last_name, username, password, email, phone, cod_fisc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 
-                mysqli_autocommit(CONN, FALSE);
+                mysqli_autocommit($conn, FALSE);
 
                 try{
-                    $stmt = mysqli_prepare(CONN, $loct_insert_sql);
+                    $stmt = mysqli_prepare($conn, $loct_insert_sql);
                     mysqli_stmt_bind_param($stmt, "is", $row['id'], $address);
                     mysqli_stmt_execute($stmt);
-                    $inserted_loct_id = mysqli_insert_id(CONN);
+                    $inserted_loct_id = mysqli_insert_id($conn);
 
-                    $stmt = mysqli_prepare(CONN, $clie_insert_sql);
+                    $stmt = mysqli_prepare($conn, $clie_insert_sql);
                     mysqli_stmt_bind_param($stmt, "iisssssss", $inserted_loct_id, $sex, $first_name, $last_name, $username, $password, $email, $phone, $cod_fisc);
                     mysqli_stmt_execute($stmt);
 
-                    mysqli_commit(CONN);
+                    mysqli_commit($conn);
                     $register_message = "Registration completed";
+                    $message = "USER: " . $username . " REGISTERED";
+                    write_console($message, DEFAULT_LOG_FPATH);
                     
                 }
                 catch(mysqli_sql_exception $e){
-                    mysqli_rollback(CONN);
+                    mysqli_rollback($conn);
                     $register_message = "Registration failed";
-                    $message = "[" . date('Y-m-d H-i-s') . "] Query insert error: " . $e->GetMessage();
-                    file_put_contents(DEFAULT_LOG_FPATH, $message, FILE_APPEND);
+                    $message = "Registration query insert error: " . $e->GetMessage();
+                    write_console($message, DEFAULT_LOG_FPATH);
                 }
                 
-                mysqli_autocommit(CONN, TRUE);
+                mysqli_autocommit($conn, TRUE);
+                
+                close_conn($conn, "REGISTER",  DEFAULT_LOG_FPATH);
                 
             }
             else{

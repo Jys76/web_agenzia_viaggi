@@ -1,6 +1,6 @@
 <?php
-    require __DIR__ . '/../../../settings/path_config.php';
-    require REGISTER_BACK_PATH;
+    require_once __DIR__ . '/../../../settings/path_config.php';
+    require_once REGISTER_BACK_PATH;
 ?>
 
 <html>

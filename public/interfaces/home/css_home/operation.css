@@ -18,8 +18,14 @@
 }
 
 #operations_box div input{
-    margin-left: 10px;
     background: rgba(206, 206, 206, 0.1);
+}
+
+#reserch_city_box,
+#outbound_box,
+#inbound_box{
+    display: flex;
+    gap: 10px;
 }
 
 #outbound_data_input[type="date"]::-webkit-calendar-picker-indicator,
@@ -58,3 +64,50 @@
     background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
+
+
+/*===========================
+    RESERCH CITY
+===========================*/
+
+#reserch_city_box{
+    box-sizing: border-box;
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#search_city_input_box{
+    position: relative;
+}
+
+#city_input_dropdown{
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    font-size: 15px;
+    gap: 5px;
+    flex-direction: column;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#city_input_dropdown div{
+    cursor: pointer;
+}
+
+#city_input_dropdown div:hover{
+    color: rgb(172, 183, 231);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.city_input_dropdown{
+    display: flex;
+}
+
+.city_input_hidden{
+    display: none;
+}
+

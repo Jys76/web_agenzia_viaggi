@@ -7,9 +7,12 @@
     define('DEFAULT_LOG_FPATH', PATH_ROOT . '/console/.log');
     define('STYLE_UTILS_URL', URL_ROOT . '/public/core/utility/style_utils.css');
     define('DB_CONFIG_PATH', PATH_ROOT . '/settings/db_config.php');
-    define('QUERY_UTIL_PATH', PATH_ROOT . '/backend/core/query_util.php');
 
-    define('LOGOUT_URL', URL_ROOT . '/backend/runtimes/home/logout.php');
+    define('QUERY_UTIL_PATH', PATH_ROOT . '/backend/core/query_util.php');
+    define('CONSOLE_UTIL_PATH', PATH_ROOT . '/backend/core/console_util.php');
+
+    define('LOGOUT_URL', URL_ROOT . '/backend/runtimes/logout/logout.php');
+
     define('HOME_BACK_PATH', PATH_ROOT . '/backend/runtimes/home/home_back.php');
     define('HOME_PUBL_URL', URL_ROOT . '/public/interfaces/home/home.php');
 

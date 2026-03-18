@@ -1,5 +1,9 @@
 
 <?php
+    require_once DB_CONFIG_PATH;
+    require_once QUERY_UTIL_PATH;
+    require_once CONSOLE_UTIL_PATH;
+
     session_start();
 
     function evaluate_login(){
@@ -19,6 +23,7 @@
             echo ob_get_clean();
         }
     }
-
+    
+    
 
 ?>

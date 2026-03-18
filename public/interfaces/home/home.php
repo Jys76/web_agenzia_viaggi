@@ -1,7 +1,7 @@
 
 <?php
-    require __DIR__ . '/../../../settings/path_config.php';
-    require HOME_BACK_PATH;
+    require_once __DIR__ . '/../../../settings/path_config.php';
+    require_once HOME_BACK_PATH;
 ?>
 
 <html>
@@ -16,10 +16,10 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
         
         <script src="js_home/navbar.js" defer></script>
         <script src="js_home/slideshow.js" defer></script>
+        <script src="js_home/operations.js" defer></script>
         
     </head>
     <body>
@@ -65,6 +65,7 @@
             <img class="slideshow_images" src="home_images/slide1.jpg" alt="gray1">
             <img class="slideshow_images" src="home_images/slide2.jpg" alt="gray2">
             <img class="slideshow_images" src="home_images/slide3.jpg" alt="gray3">
+            <img class="slideshow_images" src="home_images/slide4.jpg" alt="gray4">
             <div id="slideshow_next" onclick="show_next_slide()"></div>
             <div id="slideshow_prev" onclick="show_prev_slide()"></div>
         </div>
@@ -76,18 +77,24 @@
         <form id="operations_box" class="general_borders" method="POST">
             
             <div id="reserch_city_box">  
+
                 <label for="search_city">Dove vuoi andare?</label>
-                <input id="search_city_input" type="text" placeholder="cerca città...">
+
+                <div id="search_city_input_box">
+                    <input id="search_city_input" type="text" placeholder="cerca città..." autocomplete="off" name="city_input">
+                    <div id="city_input_dropdown"class="city_input_dropdown city_input_hidden">Hellow world</div>
+                </div>         
+
             </div>
 
             <div id="outbound_box">
                 <label for="outbound_data_input">Data Andata</label>
-                <input id="outbound_data_input" type="date" >
+                <input id="outbound_data_input" type="date" name="outbound_data_input">
             </div>
 
             <div id="inbound_box">
                 <label for="inbound_data_input">Data Ritorno</label>  
-                <input id="inbound_data_input" type="date" >
+                <input id="inbound_data_input" type="date" name="inbound_data_input">
             </div>
 
             <button type="submit">Cerca</button>

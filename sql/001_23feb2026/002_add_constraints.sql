@@ -38,6 +38,10 @@ ALTER TABLE trip
     ADD CONSTRAINT fk_trip_id_seas FOREIGN KEY (id_seas) REFERENCES seas(id)
         ON UPDATE CASCADE ON DELETE NO ACTION;
 
+ALTER TABLE trip_avai
+    ADD CONSTRAINT fk_trip_avai_id_trip FOREIGN KEY (id_trip) REFERENCES trip(id)
+        ON UPDATE CASCADE ON DELETE NO ACTION;
+
 ALTER TABLE clie
     ADD CONSTRAINT fk_clie_id_loct FOREIGN KEY(id_loct) REFERENCES loct(id)
         ON UPDATE CASCADE ON DELETE NO ACTION,
@@ -49,14 +53,14 @@ ALTER TABLE clie
     ADD CONSTRAINT uq_clie_phone UNIQUE (phone),
     ADD CONSTRAINT uq_clie_cod_fisc UNIQUE (cod_fisc);
 
-ALTER TABLE trip_clie
-    ADD CONSTRAINT fk_trip_clie_id_trip FOREIGN KEY (id_trip) REFERENCES trip(id)
+ALTER TABLE trip_avai_clie
+    ADD CONSTRAINT fk_trip_clie_id_trip_avai FOREIGN KEY (id_trip_avai) REFERENCES trip_avai(id)
         ON UPDATE CASCADE ON DELETE NO ACTION,
     ADD CONSTRAINT fk_trip_clie_id_clie FOREIGN KEY (id_clie) REFERENCES clie(id)
         ON UPDATE CASCADE ON DELETE NO ACTION,
     ADD CONSTRAINT fk_trip_clie_id_curr FOREIGN KEY (id_curr) REFERENCES curr(id)
         ON UPDATE CASCADE ON DELETE NO ACTION,
-    ADD CONSTRAINT fk_trip_clie_id_trip_clie_stat FOREIGN KEY (id_trip_clie_stat) REFERENCES trip_clie_stat(id)
+    ADD CONSTRAINT fk_trip_clie_id_id_trip_avai_clie_stat FOREIGN KEY (id_trip_avai_clie_stat) REFERENCES trip_avai_clie_stat(id)
         ON UPDATE CASCADE ON DELETE NO ACTION;
 
 ALTER TABLE path
@@ -87,7 +91,7 @@ ALTER TABLE stag_vehc
         ON UPDATE CASCADE ON DELETE NO ACTION;
 
 ALTER TABLE tict
-    ADD CONSTRAINT fk_tict_id_trip_clie FOREIGN KEY (id_trip_clie) REFERENCES trip_clie(id)
+    ADD CONSTRAINT fk_tict_id_trip_avai_clie FOREIGN KEY (id_trip_avai_clie) REFERENCES trip_avai_clie(id)
         ON UPDATE CASCADE ON DELETE NO ACTION;
 
 ALTER TABLE pers
@@ -105,7 +109,7 @@ ALTER TABLE card
         ON UPDATE CASCADE ON DELETE NO ACTION;   
 
 ALTER TABLE paym
-    ADD CONSTRAINT fk_paym_id_trip_clie FOREIGN KEY (id_trip_clie) REFERENCES trip_clie(id)
+    ADD CONSTRAINT fk_paym_id_trip_avai_clie FOREIGN KEY (id_trip_avai_clie) REFERENCES trip_avai_clie(id)
         ON UPDATE CASCADE ON DELETE NO ACTION,
     ADD CONSTRAINT fk_paym_id_card FOREIGN KEY (id_card) REFERENCES card(id)
         ON UPDATE CASCADE ON DELETE NO ACTION, 

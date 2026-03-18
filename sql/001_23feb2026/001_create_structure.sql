@@ -120,6 +120,14 @@ CREATE TABLE IF NOT EXISTS trip(
     
 );
 
+CREATE TABLE IF NOT EXISTS trip_avai(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_trip INT NOT NULL,
+
+    start_date DATETIME NOT NULL,
+    end_date DATETIME NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS clie(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_loct INT NOT NULL,
@@ -134,18 +142,18 @@ CREATE TABLE IF NOT EXISTS clie(
     cod_fisc VARCHAR(24) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS trip_clie_stat(
+CREATE TABLE IF NOT EXISTS trip_avai_clie_stat(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(64) NOT NULL,
     descr VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS trip_clie(
+CREATE TABLE IF NOT EXISTS trip_avai_clie(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_trip INT NOT NULL,
+    id_trip_avai INT NOT NULL,
     id_clie INT NOT NULL,
     id_curr VARCHAR(3) NOT NULL,
-    id_trip_clie_stat INT NOT NULL,
+    id_trip_avai_clie_stat INT NOT NULL,
 
     trip_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     trip_end TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -203,7 +211,7 @@ CREATE TABLE IF NOT EXISTS stag_vehc(
 
 CREATE TABLE IF NOT EXISTS tict(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_trip_clie INT NOT NULL,
+    id_trip_avai_clie INT NOT NULL,
     
     start_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     end_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -260,7 +268,7 @@ CREATE TABLE IF NOT EXISTS paym_metd(
 
 CREATE TABLE IF NOT EXISTS paym(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_trip_clie INT NOT NULL,
+    id_trip_avai_clie INT NOT NULL,
     id_card INT NOT NULL,
     id_curr VARCHAR(3) NOT NULL,
     id_paym_stat INT NOT NULL,
