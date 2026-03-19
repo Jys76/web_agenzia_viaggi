@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url("../images_travel/body_img.jpg") center / cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    color-scheme: dark;
+    color: white;
+    position: relative;
+    z-index: 0;
+    max-height: 100vh;
+}
+
+body:before{
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+}

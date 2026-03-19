@@ -1,0 +1,60 @@
+
+#select_travel_box{
+    box-sizing: border-box;
+    width: 60%;
+    height: calc(98vh - 90px); /* 90px navbar height*/
+    margin: 1vh 20%;
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+
+#filter_box{
+    height: 90%;
+    width: 20%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/*=========================================
+    TRAVEL SCROLL BOX
+=========================================*/
+
+#travel_scroll_box{
+    height: 90%;
+    width: 77%;
+    background: rgba(0, 0, 0, 0.5);
+    margin-left: 3%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 30px;
+
+}
+
+#travel_scroll_box::-webkit-scrollbar{
+    width: 10px;
+}
+
+#travel_scroll_box::-webkit-scrollbar-track{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#travel_scroll_box::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.3);;
+    border-radius: 5px;
+}
+
+.trip_element{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 400px;
+    margin: 20px 0;
+}
+
+.trip_element img{
+    box-sizing: border-box;
+    height: 100%;
+    width: 70%;
+    padding: 20px;
+}

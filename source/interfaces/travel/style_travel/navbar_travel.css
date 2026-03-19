@@ -1,0 +1,39 @@
+
+#navbar_travel{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    position: relative;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20%;
+}
+
+#navbar_travel h1{
+    font-family: 'Lobster Two', sans-serif;
+    font-size: clamp(20px, 2vw, 30px);
+}
+
+#navbar_links{
+    display: flex;
+    margin-left: auto;
+    gap: 15px;
+}
+
+#navbar_links a{
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    width: 140px;
+    text-align: center;
+    font-size: clamp(13px, 2vw, 16px);
+    border-top: 1px solid rgb(85, 102, 175);
+}
+
+#navbar_links a:hover{
+    color: rgb(172, 183, 231);
+    background: rgba(255, 255, 255, 0.1);
+}

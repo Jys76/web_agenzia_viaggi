@@ -38,6 +38,10 @@
     #TRAVEL
 
     define('TRAVEL_PUBL_URL', URL_ROOT . '/source/interfaces/travel/travel.php');
+
+    #IMAGE PATH
+
+    define('IMG_DPATH', PATH_ROOT . '/images/');
     
 
 ?>
