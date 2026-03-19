@@ -23,6 +23,9 @@
                 '&inbound_data=' . urlencode($inbound_data);
             header('Location: ' . TRAVEL_PUBL_URL . $data_get);
         }
+        else{
+            header('Location: ' . TRAVEL_PUBL_URL);
+        }
     }
 
 ?>

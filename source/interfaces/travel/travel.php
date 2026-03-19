@@ -1,6 +1,8 @@
 
 <?php
     require_once __DIR__ . '/../../core/settings/path_config.php';
+    require_once __DIR__ . '/backend_travel/load_trips.php';
+    require_once __DIR__ . '/view_travel/trips_element_view.php';
 ?>
 
 
@@ -27,12 +29,8 @@
                 
             </div>
             <div id="travel_scroll_box">
-                <div class="trip_element">
-                    <img src="/web_agenzia_viaggi/images/kyoto.jpg" alt="">
-                    <div id="info">
-                        <h3>Kyoto</h3>
-                    </div>
-                </div>
+                <?php load_trips_elements($trips_query_result); ?>
+
                 <div class="trip_element"></div>
                 <div class="trip_element"></div>
                 <div class="trip_element"></div>

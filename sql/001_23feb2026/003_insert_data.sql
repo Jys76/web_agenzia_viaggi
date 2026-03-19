@@ -28,7 +28,7 @@ INSERT INTO regn (id_natn, name) VALUES
     (6, 'New York'),
     (6, 'Texas'),
     (3, 'Berlin'),
-    (5, 'Kansai'),
+    (4, 'Kansai'),
     (6, 'Northeast'),
     (7, 'Catalonia');
 

@@ -2,8 +2,8 @@
 #select_travel_box{
     box-sizing: border-box;
     width: 60%;
-    height: calc(98vh - 90px); /* 90px navbar height*/
-    margin: 1vh 20%;
+    height: calc(94vh - 90px); /* 90px navbar height*/
+    margin: 3vh 20%;
     
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
 }
 
 #filter_box{
-    height: 90%;
+    height: 100%;
     width: 20%;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -22,7 +22,7 @@
 =========================================*/
 
 #travel_scroll_box{
-    height: 90%;
+    height: 100%;
     width: 77%;
     background: rgba(0, 0, 0, 0.5);
     margin-left: 3%;
@@ -46,15 +46,92 @@
 }
 
 .trip_element{
+    box-sizing: border-box;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+
     height: 400px;
+
     margin: 20px 0;
+    padding: 30px;
+    gap: 20px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(77, 77, 77);
+
 }
 
-.trip_element img{
-    box-sizing: border-box;
+.trip_element_title{
+    display: flex;
+    align-items: center;
+    height: 15%;
+}
+
+
+
+
+.trip_element_info_box{
+    display: flex;
+    height: 85%;
+    gap: 20px;
+}
+
+.trip_element_image{
     height: 100%;
-    width: 70%;
-    padding: 20px;
+    width: 65%;
+}
+
+.trip_element_image img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.trip_element_info{
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    width: 35%;
+}
+
+.trip_element_info_descr{
+    height: 50%;
+    overflow-wrap: break-word;
+    overflow: auto;
+}
+
+
+
+.trip_element_info_descr::-webkit-scrollbar{
+    width: 5px;
+}
+
+.trip_element_info_descr::-webkit-scrollbar-track{
+    background: rgba(65, 65, 65, 0.5);
+}
+
+.trip_element_info_descr::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.trip_element_info_info{
+    height: 40%;
+    width: 100%;
+}
+
+.trip_element_info_button{
+    display: flex;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    align-items: center;
+    background: rgba(155, 155, 155, 0.3);
+    height: 10%;
+}
+
+.trip_element_info_button:hover{
+    background: rgba(224, 224, 224, 0.3);
+    cursor: pointer;
+    color: rgb(172, 183, 231);;
 }
