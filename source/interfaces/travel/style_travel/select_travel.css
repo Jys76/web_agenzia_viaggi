@@ -65,6 +65,16 @@
     display: flex;
     align-items: center;
     height: 15%;
+    gap: 15px;
+}
+
+.trip_element_title{
+    font-family: 'georgia', sans-serif;
+}
+
+.trip_element_title img{
+    height: 40px;
+    width: auto;
 }
 
 
@@ -99,6 +109,17 @@
     height: 50%;
     overflow-wrap: break-word;
     overflow: auto;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 18px;
+}
+
+.trip_element_info_info h3{
+    font-family: "roboto", sans-serif;
+}
+
+.trip_element_info_info{
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 18px;
 }
 
 

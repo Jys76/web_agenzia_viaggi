@@ -116,7 +116,8 @@ CREATE TABLE IF NOT EXISTS trip(
     event_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     event_end TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     descr TEXT,
-    image_path VARCHAR(255)
+    image_path VARCHAR(255),
+    flag_image_path VARCHAR(255)
     
 );
 
@@ -124,8 +125,8 @@ CREATE TABLE IF NOT EXISTS trip_avai(
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_trip INT NOT NULL,
 
-    start_date DATETIME NOT NULL,
-    end_date DATETIME NOT NULL
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS clie(

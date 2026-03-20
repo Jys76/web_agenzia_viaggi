@@ -15,6 +15,7 @@
                 t.name as trip_name, 
                 n.name as natn_name, 
                 t.image_path as trip_image_path, 
+                t.flag_image_path as trip_flag_image_path,
                 t.descr as trip_descr, 
                 t.price as trip_price, 
                 t.id_curr as trip_id_curr, 
@@ -33,6 +34,61 @@
         close_conn($conn, $conn_action, DEFAULT_LOG_FPATH);
     }
 
+    if(
+        isset($_GET['city']) &&
+        isset($_GET['outbound_data']) &&
+        isset($_GET['inbound_data'])
+    ){
+        $city = $_GET['city'];
+        $outbound_data = $_GET['outbound_data'];
+        $inbound_data = $_GET['inbound_data'];
+        
+        if(
+            $city !== "" &&
+            $outbound_data !== "" &&
+            $inbound_data !== ""
+        ){
+            $conn_action = "Load filtered trips data";
+            $conn = open_conn($conn_action, DEFAULT_LOG_FPATH);
+            $trips_query = "
+                SELECT 
+                    t.name as trip_name, 
+                    n.name as natn_name,
+                    ta.start_date, 
+                    ta.end_date,
+                    t.image_path as trip_image_path,
+                    t.flag_image_path as trip_flag_image_path,
+                    t.descr as trip_descr, 
+                    t.price as trip_price, 
+                    t.id_curr as trip_id_curr,
+                    tc.name as trip_catg_name, 
+                    s.name as seas_name
+
+
+                FROM trip_avai ta
+                JOIN trip t ON t.id = ta.id_trip
+                JOIN trip_catg tc ON tc.id = t.id_trip_catg
+                JOIN seas s ON s.id = t.id_seas
+                JOIN loct l ON l.id = t.id_loct
+                JOIN city c ON c.id = l.id_city
+                JOIN prov p ON p.id = c.id_prov
+                JOIN regn r ON r.id = p.id_regn
+                JOIN natn n ON n.id = r.id_natn
+
+                WHERE 
+                    ta.start_date = '$outbound_data' AND 
+                    ta.end_date = '$inbound_data' AND
+                    t.name = '$city'
+            ";
+            $trips_query_result = execute_query($trips_query, $conn, DEFAULT_LOG_FPATH);
+            close_conn($conn, $conn_action, DEFAULT_LOG_FPATH);
+        }
+
+    }
+    
+
+    
+
     function load_trips_elements($trips_query_result){
         $elements = '';
         while($row = $trips_query_result->fetch_assoc()){
@@ -41,6 +97,7 @@
                 $row['trip_name'],
                 $row['natn_name'],
                 $row['trip_image_path'],
+                $row['trip_flag_image_path'],
                 $row['trip_descr'],
                 $row['trip_price'],
                 $row['trip_id_curr'],

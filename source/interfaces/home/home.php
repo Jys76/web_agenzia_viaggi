@@ -53,6 +53,7 @@
             <img class="slideshow_images" src="images_home/slide2.jpg" alt="gray2">
             <img class="slideshow_images" src="images_home/slide3.jpg" alt="gray3">
             <img class="slideshow_images" src="images_home/slide4.jpg" alt="gray4">
+            <img class="slideshow_images" src="images_home/slide5.jpg" alt="gray4">
             <div id="slideshow_next" onclick="show_next_slide()"></div>
             <div id="slideshow_prev" onclick="show_prev_slide()"></div>
         </div>
