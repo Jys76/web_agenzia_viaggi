@@ -2,6 +2,7 @@
 
 function get_trips_element_view(
     $img_dpath,
+    $trip_id,
     $trip_name,
     $natn_name,
     $trip_image_path,
@@ -15,7 +16,10 @@ function get_trips_element_view(
     ob_start();
     ?>
     <div class="trip_element">
-        <div class="trip_element_title"><h2><?=$trip_name?> - <?=$natn_name?></h2> <img src="<?=$img_dpath . $trip_flag_image_path?>" alt=""></div>
+        <div class="trip_element_title">
+            <h2><?=$trip_name?> - <?=$natn_name?></h2> 
+            <img src="<?=$img_dpath . $trip_flag_image_path?>" alt="">
+        </div>
         <div class="trip_element_info_box">
             <div class="trip_element_image"><img src="<?=$img_dpath . $trip_image_path?>" alt="<?=$trip_name?>"></div>
             <div class="trip_element_info">
@@ -25,7 +29,11 @@ function get_trips_element_view(
                     <br>Categoria: <?=$trip_catg_name?>
                     <br>Season: <?=$seas_name?>
                 </div>
-                <div class="trip_element_info_button">VIAGGIA QUI</div>
+                <div 
+                    class="trip_element_info_button"
+                    data-trip_id="<?=$trip_id?>"
+                    data-natn_name="<?=$natn_name?>"
+                >VIAGGIA QUI</div>
             </div>
         </div>
     </div>

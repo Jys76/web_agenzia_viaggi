@@ -1,0 +1,180 @@
+/*====================================
+    GENERAL
+====================================*/
+#navbar_travel{
+    width: 17%;
+}
+
+#trip_content{
+    margin-left: 3%;
+    width: 80%;
+}
+
+
+/*====================================
+    NAVBAR
+====================================*/
+
+#navbar_travel{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2vh 2vw;
+    overflow: hidden;
+}
+
+#navbar_travel h1{
+    font-family: 'Lobster Two', sans-serif;
+    font-size: clamp(20px, 2vw, 30px);
+    margin-bottom: 4vh;
+}
+
+#navbar_travel a{
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    width: 100%;
+    height: 6vh;
+    text-align: center;
+    font-size: clamp(13px, 2vw, 16px);
+    border-top: 1px solid rgb(85, 102, 175);
+}
+
+#navbar_travel a:hover{
+    color: rgb(172, 183, 231);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/*====================================
+    TRIP INFO BOX
+====================================*/
+
+#trip_name_box{
+    display: flex;
+    position: sticky;
+    align-items: center;
+    padding: 0 1.5vw;
+    width: 100%;
+    height: 10vh;
+    gap: 1.8vw;
+    top: 0;
+    z-index: 999;
+
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#trip_name_box img{
+    height: 3.5rem;
+}
+
+
+
+/*====================================
+    TRIP ALL INFO BOX
+====================================*/
+
+#trip_all_info_box{
+    display: flex;
+    width: 100%;
+    height: 84vh;
+    margin: 3vh 0;
+    padding: clamp(15px, 2vw, 25px) 3vw;
+    
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/*==================================*/
+
+#trip_info_box{
+    height: 100%;
+    width: 65%;
+    padding-right: 1.5%;
+    border-right: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+#trip_img_descr_box{
+    overflow: hidden;
+    padding-left: 1.5%;
+    height: 100%;
+    width: 35%
+}
+
+/*==================================*/
+
+#trip_img_descr_box h2{
+    margin-bottom: 3%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 7px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+}
+
+#trip_img_descr_box img{
+    height: 40%;
+    width: 100%;
+    filter: brightness(90%);
+    margin-left: auto;
+    object-fit: cover;
+}
+
+#trip_img_descr_box p{
+    margin-top: 5%;
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: justify;
+}
+
+/*==================================*/
+
+#trip_info_location_title,
+#trip_info_category_title,
+#trip_info_price_title{
+    margin-bottom: 3%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 7px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+}
+
+#trip_info_category_title,
+#trip_info_price_title{
+    margin-top: 3%;
+}
+
+
+
+/*====================================
+    TRIP INFO TABLE
+====================================*/
+
+.trip_info_table_row td:first-child{
+    width: 40%;
+}  
+
+.trip_info_tables{
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.trip_info_table_row td{
+    border-top: 1px solid rgba(153, 153, 153, 0.5);
+    border-left: 1px solid rgba(153, 153, 153, 0.5);
+    padding: 0.3vw 0 0.7vw 0.5vw;
+}
+
+.trip_info_table_row td:last-child{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-style: oblique;
+}
+

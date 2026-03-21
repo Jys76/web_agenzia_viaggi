@@ -1,13 +1,14 @@
 
 <?php
     #ROOT
-    define('URL_ROOT', '/Sun/web_agenzia_viaggi');
-    #define('URL_ROOT', '/web_agenzia_viaggi');
+    #define('URL_ROOT', '/Sun/web_agenzia_viaggi');
+    define('URL_ROOT', '/web_agenzia_viaggi');
     define('PATH_ROOT', __DIR__ . '/../../..');
 
     #CORE
     define('ENV_FPATH', PATH_ROOT . '/env.php');
     define('DEFAULT_LOG_FPATH', PATH_ROOT . '/console/.log');
+    define('DATA_LOG_FPATH', PATH_ROOT . '/console/data.log');
     define('DB_CONFIG_PATH', PATH_ROOT . '/source/core/settings/db_config.php');
 
     #UTILITY
@@ -38,6 +39,9 @@
 
     #IMAGE PATH
     define('IMG_DURL', URL_ROOT . '/images/');
+
+    #TRIP
+    define('TRIP_PUBL_URL', URL_ROOT . '/source/interfaces/trip/trip.php');
     
 
 ?>

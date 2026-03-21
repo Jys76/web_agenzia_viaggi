@@ -1,3 +1,6 @@
+/*=========================================
+    TRAVEL
+=========================================*/
 
 #select_travel_box{
     box-sizing: border-box;
@@ -11,10 +14,32 @@
     z-index: 999;
 }
 
+/*=========================================
+    TRAVEL FILTER BOX
+=========================================*/
+
 #filter_box{
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
     height: 100%;
     width: 20%;
     background: rgba(0, 0, 0, 0.5);
+}
+
+#research_info_box{
+    font-family: 'Nunito Sans', sans-serif;
+}
+.research_name{
+    margin-bottom: 0.5dvh;
+}
+
+.research_value{
+    background: rgba(155, 155, 155, 0.3);
+    margin-bottom: 1dvh;
+    padding: 0.3dvh 0.3vw;
+    font-size: 1rem;
+    font-style: oblique;
 }
 
 /*=========================================
@@ -45,6 +70,11 @@
     border-radius: 5px;
 }
 
+
+/*=========================================
+    TRAVEL ELEMENTS
+=========================================*/
+
 .trip_element{
     box-sizing: border-box;
     display: flex;
@@ -65,20 +95,24 @@
     display: flex;
     align-items: center;
     height: 15%;
-    gap: 15px;
+    gap: clamp(10px, 1vw, 15px);
 }
 
-.trip_element_title{
-    font-family: 'georgia', sans-serif;
+.trip_element_title h2{
+    font-family: 'roboto', sans-serif;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 
 .trip_element_title img{
-    height: 40px;
+    height: clamp(20px, 2vw, 40px);
     width: auto;
 }
 
 
 
+/*=========================================
+    TRAVEL ELEMENTS INFO BOX
+=========================================*/
 
 .trip_element_info_box{
     display: flex;
@@ -95,6 +129,7 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+    filter: brightness(80%);
 }
 
 .trip_element_info{
@@ -110,16 +145,23 @@
     overflow-wrap: break-word;
     overflow: auto;
     font-family: "Nunito Sans", sans-serif;
-    line-height: 18px;
+    line-height: clamp(0.8rem, 1vw, 1.1rem);
+    padding-right: 10px;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
 }
 
 .trip_element_info_info h3{
     font-family: "roboto", sans-serif;
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
 }
 
 .trip_element_info_info{
+    box-sizing: border-box;
     font-family: "Nunito Sans", sans-serif;
-    line-height: 18px;
+    line-height: clamp(0.8rem, 1vw, 1.1rem);
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    overflow: hidden;
+    margin-bottom: 1vh;
 }
 
 
@@ -145,14 +187,17 @@
 .trip_element_info_button{
     display: flex;
     box-sizing: border-box;
-    padding: 5px 20px;
+    padding: 10px 20px;
     align-items: center;
     background: rgba(155, 155, 155, 0.3);
     height: 10%;
+    font-family: 'roboto', sans-serif;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    overflow: hidden;
 }
 
 .trip_element_info_button:hover{
     background: rgba(224, 224, 224, 0.3);
     cursor: pointer;
-    color: rgb(172, 183, 231);;
+    color: rgb(172, 183, 231);
 }

@@ -13,19 +13,10 @@
         $outbound_data = $_GET['outbound_data_input'];
         $inbound_data = $_GET['inbound_data_input'];
 
-        if(
-            $city !== "" &&
-            $outbound_data !== "" &&
-            $inbound_data !== ""
-        ){
-            $data_get = '?city=' . urlencode($city) . 
-                '&outbound_data=' . urlencode($outbound_data) . 
-                '&inbound_data=' . urlencode($inbound_data);
-            header('Location: ' . TRAVEL_PUBL_URL . $data_get);
-        }
-        else{
-            header('Location: ' . TRAVEL_PUBL_URL);
-        }
+        $data_get = '?city=' . urlencode($city) . 
+            '&outbound_data=' . urlencode($outbound_data) . 
+            '&inbound_data=' . urlencode($inbound_data);
+        header('Location: ' . TRAVEL_PUBL_URL . $data_get);
     }
 
 ?>
