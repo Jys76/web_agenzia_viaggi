@@ -1,15 +1,31 @@
 
 <?php
     require_once __DIR__ . '/../../core/settings/path_config.php';
-    require_once __DIR__ . '/query_trip/trip_data.php';
+
+    require_once __DIR__ . '/backend_trip/session_control.php';
+
+    require_once __DIR__ . '/view_trip/trip_avai_view.php';
+    require_once __DIR__ . '/view_trip/trip_roms_view.php';
+
+    require_once __DIR__ . '/query_trip/trip_avai_query.php';
+    require_once __DIR__ . '/query_trip/trip_data_query.php';
+    require_once __DIR__ . '/query_trip/trip_hotel_query.php';
+
     require_once __DIR__ . '/backend_trip/load_trip_data.php';
-    
+    require_once __DIR__ . '/backend_trip/load_accm_data.php';
+    require_once __DIR__ . '/backend_trip/insert_trip_data.php';
 ?>
 
 <html>
     <head>
         <link rel="stylesheet" href="style_trip/trip.css">
         <link rel="stylesheet" href="style_trip/trip_info.css">
+        <link rel="stylesheet" href="style_trip/trip_pren.css">
+
+        <script src="script_trip/roms_data.js" defer></script>
+        <script src="script_trip/trip_avai_script.js" defer></script>
+        <script src="script_trip/trip_pren_script.js" defer></script>
+        <script src="script_trip/roms_script.js" defer></script>
 
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
@@ -35,11 +51,25 @@
                 background: rgba(0, 0, 0, 0.5);
             }
         </style>
+        <script>
+            if(<?=$add_payment?> == 1){
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: window.innerHeight,
+                            behavior: 'smooth'
+                        });
+                    }, 200);
+                });
+            }
+
+        </script>
     </head>
     <body>
         <div id="overlay"></div>
 
         <div id="content">
+
             <div id="navbar_travel">
                 <h1>Wanderwave Travel</h1>
                 <a href="<?=HOME_PUBL_URL?>">HOME</a>
@@ -54,6 +84,7 @@
                 </div>
                 
                 <div id="trip_all_info_box">
+
                     <div id="trip_info_box">
 
                         <h2 id="trip_info_location_title">Localizzazione</h2>
@@ -85,9 +116,6 @@
                             </tr>
                         </table>
 
-
-
-
                         <h2 id="trip_info_category_title">Categorie</h2>
                         
                         <table class="trip_info_tables">
@@ -101,9 +129,6 @@
                             </tr>
                         </table>
 
-
-
-
                         <h2 id="trip_info_price_title">Prezzi</h2>
 
                         <table class="trip_info_tables">
@@ -114,6 +139,7 @@
                         </table>
 
                     </div>
+
                     <div id="trip_img_descr_box">
                         <h2><?=$trip_name?></h2>
                         <img src="<?=$trip_image_path?>" alt="">
@@ -122,9 +148,96 @@
                     
                 </div>
 
-                <div id="trip_avai_box">
+                <div id="trip_pren_box">
+
+                    <h1>Prenota viaggio</h1>
                     
+                    
+                    <form id="trip_pren_form" action="" method="POST">
+                        <input type="text" id="trip_avai_id_input" name="trip_avai_id">
+                        <input type="text" id="roms_id_input" name="roms_id">
+                        <button type="submit" id="trip_pren_submit">submit</button>
+                    </form>
+                        
+                    <div id="trip_pren_box_content">
+
+                        <div id="trip_avai_box">
+                            <h3>Seleziona data</h3>
+                            <table id="trip_avai_table">
+                                <tr>
+                                    <th>Data andata</th>
+                                    <th>Data ritorno</th>
+                                    <th>Azione</th>
+                                </tr>
+                                <?= load_trip_avai($trip_avai_result) ?>
+                            </table>
+                        </div>
+
+                        <div id="hotel_roms_info_box">
+
+                            <div id="hotel_info_box">
+                                <h3>Hotel info</h3>
+                                <table>
+                                    <tr>
+                                        <td>Indirizzo hotel: </td>
+                                        <td><?=$accm_loct_address?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tipologia: </td>
+                                        <td><?=$accm_type?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Numero stelle: </td>
+                                        <td><?=$accm_stars?> &#x2B50</td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+
+                            <div id="rom_select_box">
+                                <h3>Prenota camera</h3>
+
+                                <div id="rom_select_box_input">
+                                    <label for="num_roms_input">Seleziona numero camera</label>
+
+                                    <select name="num_roms_input" id="num_roms_select">
+                                        <option value="">Seleziona</option>
+                                        <?=load_roms_select_data($trip_roms_result)?>
+                                    </select>
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <td>Stato camera: </td>
+                                        <td id="status_td">Vuoto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Numero letti: </td>
+                                        <td id="num_beds_td">Vuoto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Descrizione</td>
+                                        <td id="descr_td">Vuoto</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            <div id="trips_submit_box">
+                                <p id="trips_submit_message"></p>
+                                <div id="trips_submit">Acquista +</div>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+
+                    
+                    
+ 
+
                 </div>
+
             </div>
         </div>
 

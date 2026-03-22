@@ -1,0 +1,176 @@
+
+#trip_pren_box{
+    box-sizing: border-box;
+    height: 84vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    margin: calc(2 * 3vh + 10vh) 0;
+    padding: 3%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+#trip_pren_box h1{
+    margin-bottom: 2%;
+}
+
+#trip_pren_form{
+    display: none;
+}
+
+/*==========================================
+    TRIP AVAILABILITY-HOTEL BOX
+==========================================*/
+
+#trip_pren_box_content{
+    display: flex;
+    height: 90%;
+}
+
+/*==========================================
+    TRIP AVAILABILITY BOX
+==========================================*/
+
+
+#trip_avai_box{
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    width: 50%;
+    height: 100%;
+    padding-right: 1.5%;
+    border-right: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+#trip_avai_box{
+    height: 100%;
+    overflow-y: auto;
+}
+
+#trip_avai_box h3{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#trip_avai_table th{
+    padding: 2px 5px;
+    border-top: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+#trip_avai_table td{
+    padding: 2px 5px;
+    border-top: 1px solid rgba(153, 153, 153, 0.5);
+    border-left: 1px solid rgba(153, 153, 153, 0.5);
+    width: 33.3%;
+}
+
+.trip_avai_table_selector{
+    cursor: pointer;
+    text-align: center;
+    font-family: 'roboto', sans-serif;
+}
+
+.trip_avai_table_selector:hover{
+    color: rgb(224, 73, 73);
+}
+
+/* JS USED */
+
+.trip_avai_table_select_selected{
+    color: rgb(224, 73, 73);
+}
+
+.trip_avai_selected_row{
+    background-color: rgba(121, 121, 121, 0.4);
+}
+
+/*==========================================
+    TRIP HOTEL ROMS BOX
+==========================================*/
+
+#hotel_roms_info_box{
+    width: 50%;
+    height: 100%;
+    padding-left: 1.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*==========================================
+    HOTEL INFO 
+==========================================*/
+
+#hotel_info_box{
+    margin-bottom: 3%;
+}
+
+#hotel_info_box h3{
+    margin-bottom: 2%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#hotel_info_box table{
+    width: 100%;
+}
+
+#hotel_info_box table tr td:first-child{
+    width: 40%;
+}
+
+/*==========================================
+    ROMS INFO 
+==========================================*/
+
+
+#rom_select_box h3{
+    margin-bottom: 2%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#rom_select_box label{
+    margin-bottom: 2%;
+}
+
+#rom_select_box table{
+    width: 100%;
+}
+
+#rom_select_box table tr td:first-child{
+    width: 40%;
+}
+
+#rom_select_box_input{
+    margin-bottom: 2%;
+}
+
+#rom_select_box_input select,
+#rom_select_box_input select option{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/*==========================================
+    SUBMIT 
+==========================================*/
+
+#trips_submit_box{
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+#trips_submit{
+    cursor: pointer;
+    background: rgba(179, 179, 179, 0.4);
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+
+#trips_submit:hover{
+    color: rgb(163, 163, 163);
+    background: rgba(131, 131, 131, 0.4);
+}
+
+#trips_submit_message{
+    color: rgb(206, 124, 124);
+}

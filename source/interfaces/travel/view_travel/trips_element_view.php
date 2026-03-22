@@ -32,7 +32,6 @@ function get_trips_element_view(
                 <div 
                     class="trip_element_info_button"
                     data-trip_id="<?=$trip_id?>"
-                    data-natn_name="<?=$natn_name?>"
                 >VIAGGIA QUI</div>
             </div>
         </div>

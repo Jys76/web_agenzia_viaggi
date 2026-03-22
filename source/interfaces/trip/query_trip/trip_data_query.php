@@ -10,6 +10,8 @@
                 t.descr as trip_descr, 
                 t.price as trip_price, 
                 t.id_curr as trip_id_curr, 
+
+                t.id_accm as trip_id_accm,
                 
                 tc.name as trip_catg_name, 
                 s.name as seas_name,

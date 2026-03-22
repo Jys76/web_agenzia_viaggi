@@ -25,7 +25,13 @@
 
                 $_SESSION['username'] = mysqli_fetch_assoc($login_sql_result)['username'];
                 write_console('USER: ' . $_SESSION['username'] . ' LOGIN', DEFAULT_LOG_FPATH);
-                header("Location: " . HOME_PUBL_URL);
+                
+                if($_SESSION['return_page']){
+                    header("Location: ". $_SESSION['return_page']);
+                }
+                else{
+                    header("Location: " . HOME_PUBL_URL);
+                }
             }
             else{
                 $login_message = "Not existing account";
