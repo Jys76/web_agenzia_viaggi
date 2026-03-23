@@ -49,7 +49,8 @@
                 )
         ";
         execute_query($card_query, $conn, DEFAULT_LOG_FPATH);
-
+        
+        header("Location: " . HOME_PUBL_URL);
         
     }
 
