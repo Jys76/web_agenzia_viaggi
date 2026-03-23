@@ -85,21 +85,18 @@
 ===================================*/
 
 #travel_drop_box a:hover, 
-#offers_drop_box a:hover{
+#services_drop_box a:hover{
     color: rgb(172, 183, 231);
     background: rgba(255, 255, 255, 0.1);
 }
 
-#travel_drop_box{
+#travel_drop_box,
+#services_drop_box{
     width: 250px;
 }
 
-#offers_drop_box{
-    width: 300px;
-}
-
 #travel_drop_box,
-#offers_drop_box{
+#services_drop_box{
     position: absolute;
     z-index: 999;
     display: none;
@@ -115,7 +112,8 @@
 
 }
 
-#travel_drop_box a{
+#travel_drop_box a,
+#services_drop_box a{
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -125,15 +123,16 @@
     font-family: 'roboto', sans-serif;
 }
 
+@media (max-width: 900px){
+    #title_box{
+        font-size: 0.8rem;
+        justify-content: flex-start;
+    }
 
-#offers_drop_box a{
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    width: 100%;
-    text-decoration: none;
-    height: 30px;
-    font-family: 'roboto', sans-serif;
+    .navbar_links{
+        width: 70px;
+        font-size: 0.7rem;
+    }
 }
 
 

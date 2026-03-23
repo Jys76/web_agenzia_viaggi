@@ -1,7 +1,7 @@
 
 <?php
 
-function get_filtered_trips_query($city, $outbound_data, $inbound_data){
+function get_filtered_trips_query($city, $outbound_data, $inbound_data, $cont){
 
     $trips_query = "
         SELECT DISTINCT
@@ -25,6 +25,7 @@ function get_filtered_trips_query($city, $outbound_data, $inbound_data){
         JOIN prov p ON p.id = c.id_prov
         JOIN regn r ON r.id = p.id_regn
         JOIN natn n ON n.id = r.id_natn
+        JOIN cont co ON co.id = n.id_cont
     ";
 
     $where_query = "";
@@ -40,6 +41,10 @@ function get_filtered_trips_query($city, $outbound_data, $inbound_data){
     }
     if($inbound_data !== ""){
         $where_query .= ($chained ? " AND " : "") . "ta.end_date = '$inbound_data'";
+        $chained = True;
+    }
+    if($cont !== ""){
+        $where_query .= ($chained ? " AND " : "") . "co.name = '$cont'";
     }
 
     if($where_query !== ""){

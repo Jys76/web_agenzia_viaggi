@@ -9,6 +9,10 @@
 
 body{
     background-image: url("images_home/sea1.jpg");
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
 }
 
 body:before{

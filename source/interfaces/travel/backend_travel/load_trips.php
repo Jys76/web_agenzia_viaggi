@@ -30,42 +30,42 @@
         echo $elements;
     }
     
-
-
-
-
     /*=======================================
         LOAD FILTERED DATA
     =======================================*/
 
-    if(
-        isset($_GET['city']) &&
-        isset($_GET['outbound_data']) &&
-        isset($_GET['inbound_data'])
-    ){
-        $city = $_GET['city'];
-        $outbound_data = $_GET['outbound_data'];
-        $inbound_data = $_GET['inbound_data'];
+    $city = $_GET['city'] ?? "";
+    $outbound_data = $_GET['outbound_data'] ?? "";
+    $inbound_data = $_GET['inbound_data'] ?? "";
+    $cont = $_GET['cont'] ?? "";
 
-        if(
-            $city === "" &&
-            $outbound_data === "" &&
-            $inbound_data === ""
-        ){
-            $conn_action = "Load all trips data";
-            $conn = open_conn($conn_action, DEFAULT_LOG_FPATH);
-            $trips_query = get_all_trips_query();
-            $trips_query_result = execute_query($trips_query, $conn, DEFAULT_LOG_FPATH);
-            close_conn($conn, $conn_action, DEFAULT_LOG_FPATH);
-        }
-        else{
-            $conn_action = "Load filtered trips data";
-            $conn = open_conn($conn_action, DEFAULT_LOG_FPATH);
-            $trips_query = get_filtered_trips_query($city, $outbound_data, $inbound_data);
-            $trips_query_result = execute_query($trips_query, $conn, DEFAULT_LOG_FPATH);
-            close_conn($conn, $conn_action, DEFAULT_LOG_FPATH);
-        }
+    if(
+        $city === "" &&
+        $outbound_data === "" &&
+        $inbound_data === "" &&
+        $cont === ""
+    ){
+        $conn_action = "Load all trips data";
+        $conn = open_conn($conn_action, DEFAULT_LOG_FPATH);
+        $trips_query = get_all_trips_query();
+        $trips_query_result = execute_query($trips_query, $conn, DEFAULT_LOG_FPATH);
+        close_conn($conn, $conn_action, DEFAULT_LOG_FPATH);
     }
+    else{
+        $conn_action = "Load filtered trips data";
+        $conn = open_conn($conn_action, DEFAULT_LOG_FPATH);
+
+        $trips_query = get_filtered_trips_query(
+            $city, 
+            $outbound_data, 
+            $inbound_data,
+            $cont
+        );
+
+        $trips_query_result = execute_query($trips_query, $conn, DEFAULT_LOG_FPATH);
+        close_conn($conn, $conn_action, DEFAULT_LOG_FPATH);
+    }
+    
     
 
     

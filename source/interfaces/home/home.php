@@ -7,7 +7,14 @@
 
 <html>
     <head>  
-        <title> Viva la Cina</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>WanderWave Travel</title>
+        <link rel="icon" href="<?=IMG_DURL."wave.png"?>" type="image/png" sizes="32x32">
+
         <link rel="stylesheet" href="style_home.css">
         <link rel="stylesheet" href="css_home/navbar.css">
         <link rel="stylesheet" href="css_home/operation.css">
@@ -30,22 +37,21 @@
                 <div id="links_box_1">
                     <div id="navbar_services" class="navbar_links">SERVIZI</div>
                     <div id="navbar_traver" class="navbar_links">VIAGGIA</div>
-                    <div id="navbar_offers" class="navbar_links">OFFERTE</div>
                 </div>
                 <?php evaluate_login() ?>
             </div>
         </div>
 
-        <div id="travel_drop_box" class="drop_box">
-            <a href="#" class="drop_box_links">EUROPA</a>
-            <a href="#" class="drop_box_links">AMERICA</a>
-            <a href="#" class="drop_box_links">AFRICA</a>
-            <a href="#" class="drop_box_links">ASIA</a>
-            <a href="#" class="drop_box_links">AUSTRALIA</a>
+        <div id="services_drop_box" class="drop_box">
+            <a href="https://github.com/Jys76/web_agenzia_viaggi" class="drop_box_links">GITHUB</a>
         </div>
-        <div id="offers_drop_box" class="drop_box">
-            <a href="#" class="drop_box_links">VIAGGIA IN GRUPPO</a>
-            <a href="#" class="drop_box_links">VIAGGI SPECIALI</a>
+
+        <div id="travel_drop_box" class="drop_box">
+            <a href="<?=TRAVEL_PUBL_URL.'?cont=Europe'?>" class="drop_box_links">EUROPA</a>
+            <a href="<?=TRAVEL_PUBL_URL.'?cont=America'?>" class="drop_box_links">AMERICA</a>
+            <a href="<?=TRAVEL_PUBL_URL.'?cont=Africa'?>" class="drop_box_links">AFRICA</a>
+            <a href="<?=TRAVEL_PUBL_URL.'?cont=Asia'?>" class="drop_box_links">ASIA</a>
+            <a href="<?=TRAVEL_PUBL_URL.'?cont=Australia'?>" class="drop_box_links">AUSTRALIA</a>
         </div>
 
         <div id="slideshow_box">

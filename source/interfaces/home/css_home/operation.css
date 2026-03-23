@@ -6,7 +6,7 @@
     align-items: center;
     z-index: 999;
 
-    height: 50px;
+    height: 6%; 
     margin-top: 50px;
     gap: 60px;
     font-size: 20px;
@@ -110,3 +110,72 @@
     display: none;
 }
 
+
+@media(max-width: 1200px){
+    #operations_box{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 5px;
+        height: 20%;
+        font-size: 0.8rem;
+        padding: 3% 15%;
+    }
+
+    #reserch_city_box{
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+    #operations_box label{
+        width: 200px;
+    }
+
+    #reserch_city_box label,
+    #outbound_box label,
+    #inbound_box label{
+        width: 200px;
+    }
+
+    #reserch_city_box,
+    #outbound_box,
+    #inbound_box{
+        display: flex;
+        gap: 0;
+    }
+
+    #operations_box button{
+        margin: 20px 0;
+    }
+
+}
+
+
+@media(max-width: 900px){
+
+    #operations_box{
+        padding: 3% 10%;
+    }
+    #reserch_city_box,
+    #outbound_box,
+    #inbound_box{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #operations_box{
+        height: 40%;
+    }
+
+
+    #operations_box button{
+        margin: 40px 0;
+    }
+}

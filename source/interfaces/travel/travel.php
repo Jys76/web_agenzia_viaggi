@@ -10,6 +10,13 @@
 
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>WanderWave Travel</title>
+        <link rel="icon" href="<?=IMG_DURL."wave.png"?>" type="image/png" sizes="32x32">
+        
         <link rel="stylesheet" href="style_travel/travel.css">
         <link rel="stylesheet" href="style_travel/navbar_travel.css">
         <link rel="stylesheet" href="style_travel/select_travel.css">
@@ -25,7 +32,7 @@
             <h1>Wanderwave Travel</h1>
             <div id="navbar_links">
                 <a href="<?=HOME_PUBL_URL?>">HOME</a>
-                <a href="<?=TRAVEL_PUBL_URL.'?city='.$_GET['city'].'&outbound_data='.$_GET['outbound_data'].'&inbound_data='.$_GET['inbound_data']?>">AGGIORNA</a>
+                <a href="<?=TRAVEL_PUBL_URL.'?city='.$city.'&outbound_data='.$outbound_data.'&inbound_data='.$inbound_data?>">AGGIORNA</a>
             </div>
         </div>
 
@@ -35,11 +42,11 @@
                     <h3>DATI RICERCA</h3>
                     <br>
                     <div class="research_name">CITY NAME</div>
-                    <div class="research_value"><?= $_GET['city'] === "" ? "All cities" : $city ?></div>
+                    <div class="research_value"><?= $city === "" ? "All cities" : $city ?></div>
                     <div class="research_name">OUTBOUND DATE</div>
-                    <div class="research_value"><?= $_GET['outbound_data'] === "" ? "All dates" : $outbound_data ?></div>
+                    <div class="research_value"><?= $outbound_data === "" ? "All dates" : $outbound_data ?></div>
                     <div class="research_name">INBOUND DATE</div>
-                    <div class="research_value"><?= $_GET['inbound_data'] === "" ? "All dates" : $inbound_data ?></div>
+                    <div class="research_value"><?= $inbound_data === "" ? "All dates" : $inbound_data ?></div>
                 </div>
             </div>
             <div id="travel_scroll_box">

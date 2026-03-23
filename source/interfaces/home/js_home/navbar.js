@@ -1,17 +1,17 @@
 
+const navbar_services = document.getElementById("navbar_services");
 const navbar_traver = document.getElementById("navbar_traver");
-const navbar_offers = document.getElementById("navbar_offers");
 
+const services_drop_box = document.getElementById("services_drop_box");
 const travel_drop_box = document.getElementById("travel_drop_box");
-const offers_drop_box = document.getElementById("offers_drop_box");
 
 let drop_box_timer;
 
 
 function unshow_drop_boxes(){
     clearTimeout(drop_box_timer);
-    document.getElementById("travel_drop_box").style.display = "none";
-    document.getElementById("offers_drop_box").style.display = "none";
+    services_drop_box.style.display = "none";
+    travel_drop_box.style.display = "none";
 };
 
 
@@ -20,83 +20,53 @@ function unshow_drop_boxes(){
     DROP BOX ACTIVATION
 ============================ */
 
-navbar_traver.addEventListener("mouseenter", function(event){
+function show_dropbox(button, drop_box){
 
-    unshow_drop_boxes();
-    travel_drop_box.style.display = "flex";
+    button.addEventListener("mouseenter", ()=>{
 
-    const button_rect = navbar_traver.getBoundingClientRect();
-    const drop_rect = travel_drop_box.getBoundingClientRect();
+        unshow_drop_boxes();
+        drop_box.style.display = "flex";
 
-    const half_diff = (drop_rect.width - button_rect.width) / 2;
+        const button_rect = button.getBoundingClientRect();
+        const drop_rect = drop_box.getBoundingClientRect();
 
-    travel_drop_box.style.left = button_rect.left - half_diff + "px";
-});
+        const half_diff = (drop_rect.width - button_rect.width) / 2;
 
-navbar_offers.addEventListener("mouseenter", function(event){
-    unshow_drop_boxes();
-    offers_drop_box.style.display = "flex";
+        drop_box.style.left = button_rect.left - half_diff + "px";
+    });
+}   
 
-    const button_rect = navbar_offers.getBoundingClientRect();
-    const drop_rect = offers_drop_box.getBoundingClientRect();
+function unshow_dropbox(button, drop_box){
+    button.addEventListener("mouseleave", () => {
+        drop_box_timer = setTimeout(function(){
+            drop_box.style.display = "none";
+        }, 2000);
+    });
+}
 
-    const half_diff = (drop_rect.width - button_rect.width) / 2;
-    
-    offers_drop_box.style.left = button_rect.left - half_diff + "px";
-});
+function drop_box_focus(drop_box){
+    drop_box.addEventListener("mouseenter", function(event){
+        clearTimeout(drop_box_timer);
+    });
+}
 
-
-
-
-
-/* ============================
-    DROP BOX DEACTIVATION
-============================ */
-
-navbar_traver.addEventListener("mouseleave", function(event){
-    drop_box_timer = setTimeout(function(){
-        travel_drop_box.style.display = "none";
-    }, 2000);
-});
-
-navbar_offers.addEventListener("mouseleave", function(event){
-    drop_box_timer = setTimeout(()=>{
-        offers_drop_box.style.display = "none";
-    }, 2000);
-});
+function drop_box_focus_leave(drop_box){
+    drop_box.addEventListener("mouseleave", function(event){
+        drop_box_timer = setTimeout(function(){
+            drop_box.style.display = "none"
+        }, 2000);
+    });
+}
 
 
+show_dropbox(navbar_services, services_drop_box);
+show_dropbox(navbar_traver, travel_drop_box);
 
+unshow_dropbox(navbar_services, services_drop_box);
+unshow_dropbox(navbar_traver, travel_drop_box);
 
-/* ============================
-    DROP BOX FOCUS
-============================ */
+drop_box_focus(services_drop_box);
+drop_box_focus(travel_drop_box);
 
-travel_drop_box.addEventListener("mouseenter", function(event){
-    clearTimeout(drop_box_timer);
-});
-
-offers_drop_box.addEventListener("mouseenter", function(event){
-    clearTimeout(drop_box_timer);
-});
-
-
-
-/* ============================
-    DROP BOX FOCUS LEAVE
-============================ */
-
-travel_drop_box.addEventListener("mouseleave", function(event){
-    drop_box_timer = setTimeout(function(){
-        travel_drop_box.style.display = "none"
-    }, 2000);
-});
-
-offers_drop_box.addEventListener("mouseleave", function(event){
-    drop_box_timer = setTimeout(()=>{
-        offers_drop_box.style.display = "none";
-    }, 2000);
-});
-
-
-
+drop_box_focus_leave(services_drop_box);
+drop_box_focus_leave(travel_drop_box);
