@@ -8,20 +8,23 @@
     <head>
         <link rel="stylesheet" href="style_login.css">
         <link rel="stylesheet" href="<?=STYLE_UTIL_URL?>">
+
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     </head>
     <body>
 
         <div id="center">
 
-            <div id="navbar" class="general_borders">
-                <h3>WanderWave Travel</h3>
+            <div id="navbar" class="">
+                <h2>WanderWave Travel</h2>
                 <div>
-                    <a href="<?=HOME_PUBL_URL?>" class="general_borders">Home</a>
-                    <a href="<?=REGISTER_PUBL_URL?>" class="general_borders">Register</a>
+                    <a href="<?=HOME_PUBL_URL?>">Home</a>
+                    <a href="<?=REGISTER_PUBL_URL?>">Register</a>
                 </div>
             </div>
 
-            <div id="login_box" class="general_borders">
+            <div id="login_box">
                 <h1>Login</h1>
                 <form id="login_form" action="" method="POST">
 

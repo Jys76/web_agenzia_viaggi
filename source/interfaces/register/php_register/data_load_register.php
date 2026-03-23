@@ -12,7 +12,10 @@
     function load_sex_data($sex_query_result){
         ob_start();
         while($row = mysqli_fetch_assoc($sex_query_result)): ?>
-            <option value="<?= htmlspecialchars($row['id']) ?>"><?= htmlspecialchars($row['name']) ?></option>
+            <div 
+                data-sex_id="<?= htmlspecialchars($row['id']) ?>"
+                class="sex_option"
+            ><?= htmlspecialchars($row['name']) ?></div>
         <?php endwhile;
         return ob_get_clean();
     }
