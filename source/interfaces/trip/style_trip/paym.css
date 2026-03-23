@@ -1,0 +1,52 @@
+
+#payment_content{
+    display: none;
+    flex-direction: column;
+    height: 84vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+#payment_content h3{
+   background: rgba(255, 255, 255, 0.1);   
+   margin: 1% 0;
+}
+
+#payment_form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+#payment_form input{
+    border-bottom: 2px solid rgb(78, 78, 78);
+    border-right: 2px solid rgb(78, 78, 78);
+    color: rgb(194, 194, 194);
+}
+
+#payment_form input:focus{
+    border-bottom: 2px solid rgb(131, 131, 131);
+    border-right: 2px solid rgb(131, 131, 131);
+    border-top: 2px solid rgb(167, 167, 167);
+    border-left: 2px solid rgb(167, 167, 167);
+    outline: none;
+}
+
+#payment_form table td{
+    padding: 5px;
+}
+
+#payment_form button{
+    margin-top: 3%;
+    padding: 5px;
+    background: rgba(199, 199, 199, 0.5);
+    border: 1px;
+}
+
+#payment_form button:hover{
+    cursor: pointer;
+    color: rgb(206, 206, 206);
+    background: rgba(180, 180, 180, 0.5);
+}

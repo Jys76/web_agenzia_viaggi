@@ -14,6 +14,8 @@
     require_once __DIR__ . '/backend_trip/load_trip_data.php';
     require_once __DIR__ . '/backend_trip/load_accm_data.php';
     require_once __DIR__ . '/backend_trip/insert_trip_data.php';
+    require_once __DIR__ . '/backend_trip/insert_paym_data.php';
+    
 ?>
 
 <html>
@@ -21,6 +23,7 @@
         <link rel="stylesheet" href="style_trip/trip.css">
         <link rel="stylesheet" href="style_trip/trip_info.css">
         <link rel="stylesheet" href="style_trip/trip_pren.css">
+        <link rel="stylesheet" href="style_trip/paym.css">
 
         <script src="script_trip/roms_data.js" defer></script>
         <script src="script_trip/trip_avai_script.js" defer></script>
@@ -54,12 +57,16 @@
         <script>
             if(<?=$add_payment?> == 1){
                 window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: window.innerHeight,
-                            behavior: 'smooth'
-                        });
-                    }, 200);
+                    const body_element = document.body;
+                    body_element.style.height = "300vh";
+                    
+                    document.getElementById("payment_content").style.display = "flex";
+
+                    window.scrollTo({
+                        top: window.innerHeight * 2,
+                        behavior: 'smooth'
+                    });
+                    
                 });
             }
 
@@ -228,17 +235,72 @@
                             </div>
                         </div>
 
-
-                        
                     </div>
-
-                    
-                    
- 
 
                 </div>
 
+                <div id="payment_content">
+                    <h1>Pagamenti</h1>
+                    <br>
+                    <p>Quantità da pagare: <?=$trip_price . " " . $trip_id_curr?></p>
+                    <h3>Inserisci carta</h3>
+                    <form action="" method="POST" id="payment_form">
+                        <table>
+                            <tr>
+                                <td>Nome: </td>
+                                <td><input 
+                                    type="text" 
+                                    name="payment_first_name_input" 
+                                    id="payment_first_name"
+                                    placeholder="inserisci">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cognome: </td>
+                                <td><input 
+                                    type="text" 
+                                    name="payment_last_name_input" 
+                                    id="payment_last_name"
+                                    placeholder="inserisci">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Numero carta</td>
+                                <td><input 
+                                    type="text" 
+                                    name="payment_card_number_input" 
+                                    id="payment_card_number"
+                                    placeholder="inserisci">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Data scadenza</td>
+                                <td><input 
+                                    type="text" 
+                                    name="payment_expiration_date_input" 
+                                    id="payment_expiration_date"
+                                    placeholder="inserisci">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CVV</td>
+                                <td><input 
+                                    type="text" 
+                                    name="payment_cvv_input" 
+                                    id="payment_cvv"
+                                    placeholder="inserisci">
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <button>Paga</button>
+                    </form>
+                </div>
+
             </div>
+
+
+
         </div>
 
 

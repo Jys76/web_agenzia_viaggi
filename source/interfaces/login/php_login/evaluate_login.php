@@ -23,7 +23,11 @@
 
             if(mysqli_num_rows($login_sql_result) != 0){
 
-                $_SESSION['username'] = mysqli_fetch_assoc($login_sql_result)['username'];
+                $login_sql_data = $login_sql_result->fetch_assoc();
+
+                $_SESSION['username'] = $login_sql_data['username'];
+                $_SESSION['id_username'] = $login_sql_data['id'];
+                
                 write_console('USER: ' . $_SESSION['username'] . ' LOGIN', DEFAULT_LOG_FPATH);
                 
                 if($_SESSION['return_page']){

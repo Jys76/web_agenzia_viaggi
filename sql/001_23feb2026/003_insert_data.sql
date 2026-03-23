@@ -156,29 +156,38 @@ INSERT INTO roms_stat (name, descr) VALUES
     ('maintenance', 'Room under maintenance');
 
 INSERT INTO roms (id_accm, id_roms_stat, beds, rom_num, descr) VALUES
-(1, 1, 2, 101, 'Standard double room'),
-(1, 2, 1, 184, 'Single room'),
-(1, 1, 3, 131, 'Triple room'),
-(1, 3, 2, 52, 'Under maintenance'),
-(1, 1, 2, 31, 'Double with balcony'),
-(1, 2, 4, 142, 'Family room'),
-(1, 1, 1, 124, 'Economy single'),
-(1, 1, 2, 108, 'Standard double'),
+    (1, 1, 2, 101, 'Standard double room'),
+    (1, 2, 1, 184, 'Single room'),
+    (1, 1, 3, 131, 'Triple room'),
+    (1, 3, 2, 52, 'Under maintenance'),
+    (1, 1, 2, 31, 'Double with balcony'),
+    (1, 2, 4, 142, 'Family room'),
+    (1, 1, 1, 124, 'Economy single'),
+    (1, 1, 2, 108, 'Standard double'),
 
-(2, 1, 2, 274, 'Standard double'),
-(2, 1, 2, 201, 'Double room'),
-(2, 2, 3, 197, 'Triple occupied'),
-(2, 1, 4, 103, 'Family suite'),
-(2, 3, 2, 99, 'Maintenance'),
-(2, 1, 1, 13, 'Single room'),
+    (2, 1, 2, 274, 'Standard double'),
+    (2, 1, 2, 201, 'Double room'),
+    (2, 2, 3, 197, 'Triple occupied'),
+    (2, 1, 4, 103, 'Family suite'),
+    (2, 3, 2, 99, 'Maintenance'),
+    (2, 1, 1, 13, 'Single room'),
 
-(3, 1, 2, 78, 'Standard double'),
-(3, 2, 2, 50, 'Occupied double'),
-(3, 1, 1, 90, 'Single room'),
-(3, 1, 3, 17, 'Triple room'),
-(3, 1, 2, 1, 'Double deluxe'),
-(3, 3, 2, 123, 'Maintenance'),
-(3, 1, 4, 89, 'Family room'),
-(3, 2, 2, 300, 'Occupied'),
-(3, 1, 1, 188, 'Economy room'),
-(3, 1, 2, 63, 'Standard room');
+    (3, 1, 2, 78, 'Standard double'),
+    (3, 2, 2, 50, 'Occupied double'),
+    (3, 1, 1, 90, 'Single room'),
+    (3, 1, 3, 17, 'Triple room'),
+    (3, 1, 2, 1, 'Double deluxe'),
+    (3, 3, 2, 123, 'Maintenance'),
+    (3, 1, 4, 89, 'Family room'),
+    (3, 2, 2, 300, 'Occupied'),
+    (3, 1, 1, 188, 'Economy room'),
+    (3, 1, 2, 63, 'Standard room');
+
+INSERT INTO trip_avai_clie_stat (name) VALUES
+    ("Active"),
+    ("Not Active");
+
+INSERT INTO card_type (name) VALUES
+    ("Debit"),
+    ("Credit"),
+    ("Prepaid");

@@ -9,7 +9,6 @@
     if(!isset($_SESSION['username'])){
         $_SESSION['return_page'] = TRIP_PUBL_URL . "?trip_id=" . $_GET['trip_id'];
         header("Location: " . LOGIN_PUBL_URL);
-        
     }
 
     

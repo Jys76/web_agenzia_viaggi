@@ -43,8 +43,7 @@
 #outbound_data_input:focus,
 #inbound_data_input:focus,
 #search_city_input:focus{
-    border-color: rgb(92, 92, 92);
-    outline: none;
+    border-color: rgb(194, 194, 194);
 }
 
 #outbound_data_input,
