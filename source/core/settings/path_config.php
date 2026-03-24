@@ -2,7 +2,8 @@
 <?php
     #ROOT
     #define('URL_ROOT', '/Sun/web_agenzia_viaggi');
-    define('URL_ROOT', '/web_agenzia_viaggi');
+    #define('URL_ROOT', '/web_agenzia_viaggi');
+    define('URL_ROOT', '');
     define('PATH_ROOT', __DIR__ . '/../../..');
 
     #CORE
